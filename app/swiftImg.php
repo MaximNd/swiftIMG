@@ -40,6 +40,8 @@ class swiftIMG
 	public function __construct($images, $format = 'jpg', $quality = 90) {
 		Image::configure(array('driver' => 'gd'));
 		$this->images = Image::make($images);
+		//$manager = new ImageManager(array('driver' => 'gd'));
+		//$this->images = $manager->make($images);
 		echo $this->images;
 		$this->format = $format;
 		$this->quality = $quality;
@@ -91,6 +93,22 @@ class swiftIMG
 	// 	// 	echo $data[$i];
 	// 	return $this;
 	// }
+
+	public function histogramEqualization($type = 'grayscale') {
+
+		$hist = new \app\Histogram($this, $type);
+
+		$hist->histogramEqualization($this);
+
+		return $this;
+	}
+
+	public function histogramGraph($type = 'grayscale', $format = 'jpg', $quality = 90, $coef = 35) {
+		
+		$hist = new \app\Histogram($this, $type);
+
+		return new swiftIMG($hist->histogramGraph($this, $coef), $format, $quality);
+	}
 
 
 
@@ -244,12 +262,12 @@ class swiftIMG
 		return $this;
 	}
 
-	public function fill($filling, array $pos) {
+	// public function fill($filling, array $pos) {
 
-		$this->getImages()->fill($filling, $pos[0], $pos[1]);
+	// 	$this->getImages()->fill($filling, $pos[0], $pos[1]);
 		
-		return $this;
-	}
+	// 	return $this;
+	// }
 
 	// public function mask($scource) {
 
