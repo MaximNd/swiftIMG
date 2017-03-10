@@ -80,6 +80,20 @@ class swiftIMG
 		$this->quality = $quality;
 	}
 
+
+	// public function getImageData() {
+
+	// 	$data = $this->getImages()->iptc('Copyright');
+
+	// 	var_dump($data);
+
+	// 	// for($i = 0; $i < $this->getRows() * $this->getCols(); ++$i)
+	// 	// 	echo $data[$i];
+	// 	return $this;
+	// }
+
+
+
 	public function resize($width, $height = null) {
 
 		if(is_null($height)) {
@@ -111,6 +125,13 @@ class swiftIMG
 			return $this;
 		}
 	}
+
+	// public function trim() {
+		
+	// 	$this->getImages()->trim('top-left', null, 25, 50);
+
+	// 	return $this;
+	// }
 
 	
 
@@ -199,6 +220,16 @@ class swiftIMG
 		return $this;
 	}
 
+	public function sharpen($value = 10) {
+
+		if($value < -100) $value = -100;
+		else if($value > 100) $value = 100;
+
+		$this->getImages()->sharpen($value);
+
+		return $this;
+	}
+
 	public function rotate($degree = 90) {
 
 		$this->getImages()->rotate($degree);
@@ -212,6 +243,20 @@ class swiftIMG
 
 		return $this;
 	}
+
+	public function fill($filling, array $pos) {
+
+		$this->getImages()->fill($filling, $pos[0], $pos[1]);
+		
+		return $this;
+	}
+
+	// public function mask($scource) {
+
+	// 	$this->getImages()->mask($scource);
+
+	// 	return $this;
+	// }
 
 
 
@@ -233,15 +278,51 @@ class swiftIMG
 	}
 
 	public function insertMerge($img, $opacityValue, $pos = 'top-left', $offsetX = 0, $offsetY = 0) {
+		
 		$opacityImg = Image::make($img);
+		
 		$opacityImg->opacity($opacityValue);
+		
 		return $this->insert($opacityImg, $pos, $offsetX, $offsetY);
 	}
 
 	public function insertGrayscale($img, $pos = 'top-left', $offsetX = 0, $offsetY = 0) {
+		
 		$grayscaleImg = Image::make($img);
+		
 		$grayscaleImg->greyscale();
+		
 		return $this->insert($grayscaleImg, $pos, $offsetX, $offsetY);	
+	}
+
+	public function insertResize($img, array $size, $pos = 'top-left', $offsetX = 0, $offsetY = 0) {
+		$resizeImg = $img;
+
+		if(is_string($img))
+			$resizeImg = new swiftIMG($img);
+
+		$resizeImg->resize($size[0], $size[1]);
+
+		return $this->insert($resizeImg->getImages(), $pos, $offsetX, $offsetY);
+	}
+
+	public function insertCrop($img, array $values, $pos = 'top-left', $offsetX = 0, $offsetY = 0) {
+		$cropImg = $img;
+
+		if(is_string($img))
+			$cropImg = new swiftIMG($img);
+			//crop($width = null, $height = null, $startX = null, $startY = null, $isProp = false)
+		$cropImg->crop($values[0], $values[1], $values[2], $values[3], $values[4]);
+
+		return $this->insert($cropImg->getImages(), $pos, $offsetX, $offsetY);
+	}
+
+
+	public function text($text, $startX = 0, $startY = 0) {
+
+		$this->getImages()->text($text, $startX, $startY);
+
+		return $this;
 	}
 
 
