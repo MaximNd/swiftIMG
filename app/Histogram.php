@@ -13,6 +13,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 */
 class Histogram
 {
+	const SIZE = 256;
 	//1)rgb
 	//2)grayscale
 	private $type;
@@ -39,7 +40,7 @@ class Histogram
 			}
 		}
 		//var_dump($this->histogram);
-		// for($i = 0; $i < 256; ++$i)
+		// for($i = 0; $i < self::SIZE; ++$i)
 		// echo $i . ': ' . $this->histogram[$i] . '<br>';
 	}
 
@@ -53,13 +54,13 @@ class Histogram
 		return $this->type;
 	}
 
-	public function histogramEqualization(\app\swiftImg $img) {
+	private function histogramEqualization(\app\swiftImg $img) {
 		$sum = 0;
 		$alpha = 255 / ($img->getRows() * $img->getCols());
 		//$newHistogram = [];
 		if($this->getType() == 'grayscale'  || $this->getType() == 'color-to-grayscale') {
 			$newHistogram = [];
-			for($i = 0; $i < 256; ++$i) {
+			for($i = 0; $i < self::SIZE; ++$i) {
 		        $sum += $this->histogram[$i];
 		        $newHistogram[$i] = $sum;
 		    }
@@ -76,7 +77,7 @@ class Histogram
 		} else if ($this->getType() == 'color') {
 			$newHistogram = [[],[],[]];
 			for($i = 0; $i < 3; ++$i) {
-				for($j = 0; $j < 256; ++$j) {
+				for($j = 0; $j < self::SIZE; ++$j) {
 					$sum += $this->histogram[$i][$j];
 					$newHistogram[$i][$j] = $sum;
 				}
@@ -99,19 +100,19 @@ class Histogram
 		
 	}
 
-	public function histogramGraph(\app\swiftImg $img, $coef = 35) {
-		
-		$graph = Image::canvas(256, 256, '#000000');
+	private function histogramGraph(\app\swiftImg $img, $coef = 35) {
+
+		$graph = Image::canvas(self::SIZE, self::SIZE, '#000000');
 		$indent_1 = 0;
 		$indent_2 = 0;
 		$indent_3 = 0;
 
 		//$countHist = count($this->histogram);
 		if($this->getType() === 'grayscale'  || $this->getType() == 'color-to-grayscale') {
-			for($i = 0; $i < 256; $i+=2) {
-				$indent_1 = 256 - (($this->histogram[$i] / ($img->getCols() * $img->getRows()))*256)*$coef;
-				$indent_2 = 256 - (($this->histogram[$i+1] / ($img->getCols() * $img->getRows()))*256)*$coef;
-				$indent_3 = 256 - (($this->histogram[$i+2] / ($img->getCols() * $img->getRows()))*256)*$coef;
+			for($i = 0; $i < self::SIZE; $i+=2) {
+				$indent_1 = self::SIZE - (($this->histogram[$i] / ($img->getCols() * $img->getRows()))*self::SIZE)*$coef;
+				$indent_2 = self::SIZE - (($this->histogram[$i+1] / ($img->getCols() * $img->getRows()))*self::SIZE)*$coef;
+				$indent_3 = self::SIZE - (($this->histogram[$i+2] / ($img->getCols() * $img->getRows()))*self::SIZE)*$coef;
 				//$graph->pixel([200, 200, 200], $i, (int)($indent));
 				$graph->line($i, (int)$indent_1, $i+1, (int)$indent_2, function ($draw) {
 				    $draw->color('#FFFFFF');
@@ -124,10 +125,10 @@ class Histogram
 			return $graph;	
 		} else if ($this->getType() == 'color') {
 			for($i = 0; $i < 3; ++$i) {
-				for($j = 0; $j < 256; $j+=2) {
-					$indent_1 = 256 - (($this->histogram[$i][$j] / ($img->getCols() * $img->getRows()))*256)*$coef;
-					$indent_2 = 256 - (($this->histogram[$i][$j+1] / ($img->getCols() * $img->getRows()))*256)*$coef;
-					$indent_3 = 256 - (($this->histogram[$i][$j+2] / ($img->getCols() * $img->getRows()))*256)*$coef;
+				for($j = 0; $j < self::SIZE; $j+=2) {
+					$indent_1 = self::SIZE - (($this->histogram[$i][$j] / ($img->getCols() * $img->getRows()))*self::SIZE)*$coef;
+					$indent_2 = self::SIZE - (($this->histogram[$i][$j+1] / ($img->getCols() * $img->getRows()))*self::SIZE)*$coef;
+					$indent_3 = self::SIZE - (($this->histogram[$i][$j+2] / ($img->getCols() * $img->getRows()))*self::SIZE)*$coef;
 					//$graph->pixel([200, 200, 200], $i, (int)($indent));
 					if($i == 0){
 						$graph->line($j, (int)$indent_1, $j+1, (int)$indent_2, function ($draw) {

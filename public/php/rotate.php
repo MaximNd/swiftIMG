@@ -4,6 +4,7 @@
 
 require "../../app/swiftImg.php";
 require "../../app/Histogram.php";
+require "../../app/CannyEdgeDetector.php";
 
 $img = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/img.jpg', 'jpeg' , 100);
 
@@ -19,14 +20,20 @@ $img5 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/Origi
 
 $img6 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/LenaDark.png', 'jpg', 100);
 
-$img7 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/lena.jpg', 'jpg', 100);
+$img7 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/lena.jpg', 'gif', 100);
+
+$img8 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/test4.jpg', 'gif', 100);
 //$hist = new \app\Histogram('grayscale', $img6);
 
+
+//var_dump($Canny->fillNewImageData());
 //$hist->histogramEqualization($img);
 //echo $hist->histogramGraph($img)->response('jpeg', 90);
 
+//var_dump($img->getImageData());
 
-echo $img4->histogramEqualization('grayscale')->outPut();
+
+echo $img2->operatorCanny()->outPut();
 
 
 ?>

@@ -18,6 +18,7 @@ class swiftIMG
 	private $quality;
 	private $rows;
 	private $cols;
+	private $imageData = array("");
 
 	//The function checks the data that was written to the object
 	protected function validate() {
@@ -83,16 +84,16 @@ class swiftIMG
 	}
 
 
-	// public function getImageData() {
-
-	// 	$data = $this->getImages()->iptc('Copyright');
-
-	// 	var_dump($data);
-
-	// 	// for($i = 0; $i < $this->getRows() * $this->getCols(); ++$i)
-	// 	// 	echo $data[$i];
-	// 	return $this;
-	// }
+	public function getImageData($setNewData = false) {
+		if($this->imageData[0] == "" || !$setNewData){
+			for($i = 0; $i < $this->getRows(); ++$i) {
+				for($j = 0; $j < $this->getCols(); ++$j) {
+					$this->imageData[$i][$j] = $this->getImages()->pickColor($i, $j);
+				}
+			}	
+		}
+		return $this->imageData;
+	}
 
 	public function histogramEqualization($type = 'grayscale') {
 
@@ -108,6 +109,13 @@ class swiftIMG
 		$hist = new \app\Histogram($this, $type);
 
 		return new swiftIMG($hist->histogramGraph($this, $coef), $format, $quality);
+	}
+
+	public function operatorCanny($type = 'color', $format = 'jpg', $quality = 90) {
+
+		$Canny = new \app\CannyEdgeDetector($this, 'color');
+		
+		return new swiftIMG($Canny->CannyOperator(), $format, $quality);
 	}
 
 
