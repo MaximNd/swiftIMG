@@ -54,7 +54,7 @@ class Histogram
 		return $this->type;
 	}
 
-	private function histogramEqualization(\app\swiftImg $img) {
+	public function histogramEqualization(\app\swiftImg $img) {
 		$sum = 0;
 		$alpha = 255 / ($img->getRows() * $img->getCols());
 		//$newHistogram = [];
@@ -100,7 +100,7 @@ class Histogram
 		
 	}
 
-	private function histogramGraph(\app\swiftImg $img, $coef = 35) {
+	public function histogramGraph(\app\swiftImg $img, $coef = 35) {
 
 		$graph = Image::canvas(self::SIZE, self::SIZE, '#000000');
 		$indent_1 = 0;

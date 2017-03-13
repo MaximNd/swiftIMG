@@ -20,9 +20,31 @@ $img5 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/Origi
 
 $img6 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/LenaDark.png', 'jpg', 100);
 
-$img7 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/lena.jpg', 'gif', 100);
+$img7 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/lena.jpg', 'jpg', 100);
 
-$img8 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/test4.jpg', 'gif', 100);
+$img8 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/test4.jpg', 'jpg', 100);
+
+$img9 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/eleph.jpg', 'jpg', 100);
+
+$img10 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/yellow.jpg', 'jpg', 100);
+
+$img11 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/test12.jpg', 'jpg', 40);
+
+$img12 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/newLena.jpg', 'jpg', 100);
+
+$img13 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/natureTest1.jpg', 'jpg', 100);
+$img14 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/natureTest2.jpg', 'jpg', 100);
+$img15 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/natureTest3.jpg', 'jpg', 100);
+$img16 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/natureTest4.jpg', 'jpg', 100);
+$img17 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/natureTest5.jpg', 'jpg', 100);
+$img18 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/natureTest6.jpg', 'jpg', 100);
+$img19 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/natureTest7.jpg', 'jpg', 100);
+$img20 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/natureTest8.jpg', 'jpg', 100);
+
+$img21 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/WinterCat.jpg', 'jpg', 50);
+
+$img22 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/green.jpg', 'jpg', 100);
+
 //$hist = new \app\Histogram('grayscale', $img6);
 
 
@@ -33,7 +55,7 @@ $img8 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/test4
 //var_dump($img->getImageData());
 
 
-echo $img2->operatorCanny()->outPut();
+echo $img22->histogramGraph('color', 'png', 100, 5)->outPut();
 
 
 ?>

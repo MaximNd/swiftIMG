@@ -111,9 +111,9 @@ class swiftIMG
 		return new swiftIMG($hist->histogramGraph($this, $coef), $format, $quality);
 	}
 
-	public function operatorCanny($type = 'color', $format = 'jpg', $quality = 90) {
+	public function borders($type = 'color', $format = 'jpg', $quality = 90) {
 
-		$Canny = new \app\CannyEdgeDetector($this, 'color');
+		$Canny = new \app\CannyEdgeDetector($this, $type);
 		
 		return new swiftIMG($Canny->CannyOperator(), $format, $quality);
 	}
