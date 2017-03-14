@@ -5,10 +5,10 @@
         <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"/>
         <meta name=viewport content="width=device-width, initial-scale=1.0">
         <title>swiftIMG | Головна</title>
-        <link href=/public/css/bootstrap.min.css rel="stylesheet"/>
-        <link href=/public/css/font-awesome.min.css rel="stylesheet"/>
-        <link href=/public/less/style.less rel="stylesheet/less"/>
-        <script src=/public/js/less.js></script>
+        <link href=public/css/bootstrap.min.css rel="stylesheet"/>
+        <link href=public/css/font-awesome.min.css rel="stylesheet"/>
+        <link href=public/less/style.less rel="stylesheet/less"/>
+        <script src=public/js/less.js></script>
     </head>
     <body>
         <header class="navbar navbar-fixed-top">
@@ -30,18 +30,23 @@
             </div>
         </header>
 
+        <img id="img" src="">
         
 
-        <script src=/public/js/jquery.js></script>
-        <script src=/public/js/swiftIMG.js></script>
+        <script src=public/js/jquery.js></script>
+        <script src=public/js/swiftIMG.js></script>
 
         <script>
             $.ajax({
-                url: '/public/php/rotate.php',
-                data: {"path" : "/public/img/img.jpg", "type" : "jpg", "quality" : 100},
+                url: 'public/php/rotate.php',
+                data: {"path" : "images/sierra.jpg", "type" : "png", "quality" : 100},
                 type: "POST",
+                beforeSend: function() {
+                    $("#img").attr("src", data);
+                }
                 success: function(data) {
-                    $("body").append(`<img src='${data}'>`);
+                    $("#img").attr("src", data);
+                    console.log(data);
                 }
             });
         </script>
