@@ -1,0 +1,8 @@
+[14-Mar-2017 14:58:30 Europe/Moscow] PHP Fatal error:  Uncaught Intervention\Image\Exception\MissingDependencyException: PHP Fileinfo extension must be installed/enabled to use Intervention Image. in /home/vitalijm/swiftIMG.tapinambur.com/vendor/intervention/image/src/Intervention/Image/ImageManager.php:133
+Stack trace:
+#0 /home/vitalijm/swiftIMG.tapinambur.com/vendor/intervention/image/src/Intervention/Image/ImageManager.php(25): Intervention\Image\ImageManager->checkRequirements()
+#1 /home/vitalijm/swiftIMG.tapinambur.com/vendor/intervention/image/src/Intervention/Image/ImageManagerStatic.php(33): Intervention\Image\ImageManager->__construct()
+#2 /home/vitalijm/swiftIMG.tapinambur.com/vendor/intervention/image/src/Intervention/Image/ImageManagerStatic.php(45): Intervention\Image\ImageManagerStatic::getManager()
+#3 /home/vitalijm/swiftIMG.tapinambur.com/app/swiftImg.php(41): Intervention\Image\ImageManagerStatic::configure(Array)
+#4 /home/vitalijm/swiftIMG.tapinambur.com/public/php/rotate.php(7): app\swiftIMG->__construct('/public/img/img...', 'jpg', '100')
+#5 { in /home/vitalijm/swiftIMG.tapinambur.com/vendor/intervention/image/src/Intervention/Image/ImageManager.php on line 133
