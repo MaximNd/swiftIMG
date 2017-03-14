@@ -4,7 +4,7 @@
 
 require "../../app/swiftImg.php";
 
-$img = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/img.jpg', 'jpeg' , 90);
+$img = new \app\swiftIMG($_POST["path"], $_POST["type"] , $_POST["quality"]);
 
 // echo $imggetImages();
 

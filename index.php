@@ -29,7 +29,22 @@
                 </div>
             </div>
         </header>
+
+        
+
         <script src=/public/js/jquery.js></script>
+        <script src=/public/js/swiftIMG.js></script>
+
+        <script>
+            $.ajax({
+                url: '/public/php/rotate.php',
+                data: {"path" : "/public/img/img.jpg", "type" : "jpg", "quality" : 100},
+                type: "POST",
+                success: function(data) {
+                    $("body").append(`<img src='${data}'>`);
+                }
+            });
+        </script>
     </body>
 </html>
 
