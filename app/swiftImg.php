@@ -38,6 +38,11 @@ class swiftIMG
 
 	}
 
+	private function updateData() {
+		$this->rows = $this->getImages()->width();
+		$this->cols = $this->getImages()->height();
+	}
+
 	public function __construct($images, $format = 'jpg', $quality = 90) {
 		Image::configure(array('driver' => 'gd'));
 		$this->images = Image::make($images);
@@ -111,11 +116,18 @@ class swiftIMG
 		return new swiftIMG($hist->histogramGraph($this, $coef), $format, $quality);
 	}
 
-	public function borders($type = 'color', $format = 'jpg', $quality = 90, $sigma = 1, $sobelK = 1, $low = 50, $high = 150, $size = 2) {
+	public function CannyBorder($type = 'color', $format = 'jpg', $quality = 90, $sigma = 1, $sobelK = 1, $low = 50, $high = 150, $size = 2) {
 
 		$Canny = new \app\CannyEdgeDetector($this, $type);
 		
 		return new swiftIMG($Canny->CannyOperator($sigma, $sobelK, $low, $high, $size), $format, $quality);
+	}
+
+	public function SobelBorder($type = 'color', $k = 1, $format = 'jpg', $quality = 90) {
+
+		$Sobel = new \app\SobelEdgeDetector($this, $type);
+		
+		return new swiftIMG($Sobel->SobelOperator($k), $format, $quality);
 	}
 
 
@@ -129,6 +141,8 @@ class swiftIMG
 		}
 
 		$this->getImages()->resize($width, $height);
+
+		$this->updateData();
 
 		return $this;
 
@@ -147,6 +161,8 @@ class swiftIMG
 			//if(!is_null($startX)) $startX = $width - $startX;
 
 			$this->getImages()->crop($width, $height, $startX, $startY);
+
+			$this->updateData();
 
 			return $this;
 		}
@@ -260,6 +276,8 @@ class swiftIMG
 
 		$this->getImages()->rotate($degree);
 
+		$this->updateData();
+
 		return $this;
 	}
 
@@ -343,10 +361,15 @@ class swiftIMG
 		return $this->insert($cropImg->getImages(), $pos, $offsetX, $offsetY);
 	}
 
+	public function frame($type = 'type-1') {
 
-	public function text($text, $startX = 0, $startY = 0) {
+		return $this->insertResize($_SERVER["DOCUMENT_ROOT"] . "/swiftIMG/frames/" . $type . ".png", [$this->getRows(), $this->getCols()]);
+	}
 
-		$this->getImages()->text($text, $startX, $startY);
+
+	public function text($text, $startX = 0, $startY = 0, $func) {
+
+		$this->getImages()->text($text, $startX, $startY, $func);
 
 		return $this;
 	}
@@ -375,7 +398,7 @@ class swiftIMG
 	}
 
 	public function outPut() {
-		return $this->getImages()->response($this->getFormat(), $this->getQuality());
+		return $this->getImages()->encode('data-url', $this->getQuality(), $this->getFormat());
 	}
 }
 

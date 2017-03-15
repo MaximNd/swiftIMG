@@ -55,7 +55,7 @@ $img22 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/gree
 //var_dump($img->getImageData());
 
 
-echo $img22->histogramGraph('color', 'png', 100, 5)->outPut();
+echo $img8->SobelBorder('grayscale')->outPut();
 
 
 ?>

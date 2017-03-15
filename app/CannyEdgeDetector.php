@@ -4,6 +4,7 @@ namespace app;
 
 // include composer autoload
 require '../../vendor/autoload.php';
+require "SobelEdgeDetector.php";
 
 // import the Intervention Image Manager Class
 use Intervention\Image\ImageManagerStatic as Image;
@@ -12,7 +13,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 /**
 * 
 */
-class CannyEdgeDetector
+class CannyEdgeDetector extends SobelEdgeDetector
 {
 	private $newImage;
 
@@ -87,14 +88,14 @@ class CannyEdgeDetector
 				// } else {
 				// 	$this->newImageData[$i][$j] = [$flatNewImageData[($i * $this->getNewImageCols() + $j) - $this->getNewImageCols() * ($this->getNewImageCols()/4)],$flatNewImageData[$i * $this->getNewImageCols() + $j],$flatNewImageData[$i * $this->getNewImageCols() + $j], 1.0];
 				// }
-				$this->newImageData[$i][$j] = [$flatNewImageData[$i * $this->getNewImageCols() + $j],$flatNewImageData[$i * $this->getNewImageCols() + $j],$flatNewImageData[$i * $this->getNewImageCols() + $j], 1.0];
+				$this->newImageData[$i][$j] = (int)$flatNewImageData[($i * $this->getNewImageCols()) + $j];
 			}
 		}
 		//var_dump($this->newImageData);
 		for($i = 0; $i < $this->getNewImageRows(); ++$i) {
 			for($j = 0; $j < $this->getNewImageCols(); ++$j) {
 				//$this->newImage->pixel([$this->newImageData[$i][$j][0],$this->newImageData[$i][$j][0],$this->newImageData[$i][$j][0]], $i, $j);
-				$this->newImage->pixel([$this->newImageData[$i][$j][0],$this->newImageData[$i][$j][1],$this->newImageData[$i][$j][2]], $i, $j);
+				$this->newImage->pixel([$this->newImageData[$i][$j],$this->newImageData[$i][$j],$this->newImageData[$i][$j]], $i, $j);
 			}
 		}
 		return $this->newImage;
@@ -108,30 +109,14 @@ class CannyEdgeDetector
 			$div += $mask[$i];
 		}
 		$sum = 0;
-		for ($i = $sizeR / 2; $i < $rows - $sizeR / 2; ++$i) {
-			for ($j = $sizeC / 2; $j < $cols - $sizeC / 2; ++$j) {
+		for ($i = (int)($sizeR / 2); $i < $rows - (int)($sizeR / 2); ++$i) {
+			for ($j = (int)($sizeC / 2); $j < $cols - (int)($sizeC / 2); ++$j) {
 				for ($k = 0; $k < $sizeR; ++$k) {
 					for ($l = 0; $l < $sizeC; ++$l) {
-						$sum += $ImageData[($i + $k - ($sizeR / 2)) * $cols + ($j + $l - ($sizeC / 2))] * $mask[$k * $sizeC + $l];
+						$sum += $ImageData[($i + $k - (int)($sizeR / 2)) * $cols + ($j + $l - (int)($sizeC / 2))] * $mask[$k * $sizeC + $l];
 					}
 				}
 				$newImageData[$i * $cols + $j] = (int)($sum/$div);
-				$sum = 0;
-			}
-		}
-
-	}
-
-	private function convolution(array &$mask, array&$ImageData, array &$newImageData, int $sizeR, int $sizeC, $rows, $cols) {
-		$sum = 0;
-		for ($i = $sizeR / 2; $i < $rows - $sizeR / 2; ++$i) {
-			for ($j = $sizeC / 2; $j < $cols - $sizeC / 2; ++$j) {
-				for ($k = 0; $k < $sizeR; ++$k) {
-					for ($l = 0; $l < $sizeC; ++$l) {
-						$sum += $ImageData[($i + $k - ($sizeR / 2)) * $cols + ($j + $l - ($sizeC / 2))] * $mask[$k * $sizeC + $l];
-					}
-				}
-				$newImageData[$i * $cols + $j] = $sum;
 				$sum = 0;
 			}
 		}
@@ -156,73 +141,6 @@ class CannyEdgeDetector
 		for ($i = 0; $i < $size*$size; ++$i) {
 			$mask[$i] = (pow($E, -(double)(pow($arr1[$i], 2) + pow($arr2[$i], 2)) / (double)(2 * $sigma*$sigma))) / ((double)(2 * $sigma*$sigma)*$PI);
 		}
-	}
-
-	private function Sobel(array &$ImageData, array &$newImageData, $rows, $cols, int $k, array &$arc) {
-		$PI = pi();
-		$E = exp(1);
-		//$size = 3;
-		$Gxx = [];
-		$Gxx[0] = 1;
-		$Gxx[1] = 0;
-		$Gxx[2] = -1;
-
-		$Gxy = [];
-		$Gxy[0] = 1;
-		$Gxy[1] = 2;
-		$Gxy[2] = 1;
-
-		$Gyx = [];
-		$Gyx[0] = 1;
-		$Gyx[1] = 2;
-		$Gyx[2] = 1;
-
-		$Gyy = [];
-		$Gyy[0] = 1;
-		$Gyy[1] = 0;
-		$Gyy[2] = -1;
-
-		$Gx = [];
-		$Gy = [];
-		$GX = [];
-		$GY = [];
-
-		$this->convolution($Gxx, $ImageData, $Gx, 1, 3, $rows, $cols);
-		$this->convolution($Gxy, $Gx, $GX, 3, 1, $rows, $cols);
-		$this->convolution($Gyx, $ImageData, $Gy, 1, 3, $rows, $cols);
-		$this->convolution($Gyy, $Gy, $GY, 3, 1, $rows, $cols);
-
-		if (($k != 0) && ($k != 1)) {
-			for ($i = 0; $i < $rows*$cols; ++$i) {
-				$GX[$i] = (int)(($GX[$i]) / $k);
-				$GY[$i] = (int)(($GY[$i]) / $k);
-			}
-		}
-
-		for ($i = 0; $i < $rows*$cols; ++$i) {
-			$newImageData[$i] = (double)(sqrt(pow($GX[$i], 2) + pow($GY[$i], 2)));
-
-			if (($GX[$i] == 0) && ($GY[$i] == 0)) {
-				//echo "Set 0 <br>";
-				$arc[$i] = 0;
-			}
-			else if($GX[$i] == 0) {
-				//echo "Set 90 <br>";
-				$arc[$i] = 90;
-			}
-			else {
-				//echo "Set atan <br>";
-				$arc[$i] = (atan((double)($GY[$i]) / (double)($GX[$i])) * 180) / $PI;
-			}
-			if ($newImageData[$i] >= 255) {
-			    $newImageData[$i] = 255;
-			}
-			else if ($newImageData[$i] <= 0) {
-				$newImageData[$i] = 0;
-			}
-		}
-		// echo "<br>arc: <br>";
-		// var_dump($arc);
 	}
 
 	private function Canny(array &$ImageData, array &$newImageData, $rows, $cols, $size, $sigma, $sobelK, $low, $high) {
@@ -306,7 +224,6 @@ class CannyEdgeDetector
 				}
 			}
 		}
-		return $newImageData;
 	}
 
 
