@@ -5,6 +5,9 @@
 require "../../app/swiftImg.php";
 require "../../app/Histogram.php";
 require "../../app/CannyEdgeDetector.php";
+require "../../app/RegionGrowing.php";
+
+
 
 $img = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/img.jpg', 'jpeg' , 100);
 
@@ -24,7 +27,7 @@ $img7 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/lena.
 
 $img8 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/test4.jpg', 'jpg', 100);
 
-$img9 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/eleph.jpg', 'jpg', 100);
+$img9 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/eleph.jpg', 'jpg', 40);
 
 $img10 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/yellow.jpg', 'jpg', 100);
 
@@ -45,6 +48,14 @@ $img21 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/Wint
 
 $img22 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/green.jpg', 'jpg', 100);
 
+$img23 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/ColorTest1.jpg', 'jpg', 100);
+
+$img24 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/ColorTest2.jpg', 'jpg', 100);
+
+$img25 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/ColorTest3.jpg', 'jpg', 100);
+
+$img26 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/girl-colorful-portrait.jpg', 'jpg', 100);
+
 //$hist = new \app\Histogram('grayscale', $img6);
 
 
@@ -55,7 +66,7 @@ $img22 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/gree
 //var_dump($img->getImageData());
 
 
-echo $img8->SobelBorder('grayscale')->outPut();
+echo $img18->regionGrowing(10)->outPut();
 
 
 ?>

@@ -130,6 +130,13 @@ class swiftIMG
 		return new swiftIMG($Sobel->SobelOperator($k), $format, $quality);
 	}
 
+	public function regionGrowing(int $T = 10, $type = 'color', $format = 'jpg', $quality = 90) {
+
+		$RegGR = new \app\RegionGrowing($this, $type);
+		
+		return new swiftIMG($RegGR->grow($T), $format, $quality);
+	}
+
 
 
 	public function resize($width, $height = null) {
@@ -248,12 +255,12 @@ class swiftIMG
 	}
 
 	//__________________________--Applying Effects___________________________
-	// public function filter($value = 45) {
+	public function filter() {
 		
-	// 	$this->getImages()->filter(new \Intervention\Image\Filters\DemoFilter($value));
+		$this->getImages()->filter(new \Intervention\Image\Filters\DemoFilter($value));
 
-	// 	return $this;
-	// }
+		return $this;
+	}
 
 	public function pixelate($size = 1) {
 
@@ -323,8 +330,11 @@ class swiftIMG
 
 	public function insertMerge($img, $opacityValue, $pos = 'top-left', $offsetX = 0, $offsetY = 0) {
 		
-		$opacityImg = Image::make($img);
-		
+		if(is_string($img))
+			$opacityImg = Image::make($img);
+		else
+			$opacityImg = Image::make($img->getImages());
+
 		$opacityImg->opacity($opacityValue);
 		
 		return $this->insert($opacityImg, $pos, $offsetX, $offsetY);
@@ -332,11 +342,14 @@ class swiftIMG
 
 	public function insertGrayscale($img, $pos = 'top-left', $offsetX = 0, $offsetY = 0) {
 		
-		$grayscaleImg = Image::make($img);
+		if(is_string($img))
+			$grayscaleImg = Image::make($img);
+		else
+			$grayscaleImg = Image::make($img->getImages());
 		
 		$grayscaleImg->greyscale();
 		
-		return $this->insert($grayscaleImg, $pos, $offsetX, $offsetY);	
+		return $this->insert($grayscaleImg, $pos, $offsetX, $offsetY);
 	}
 
 	public function insertResize($img, array $size, $pos = 'top-left', $offsetX = 0, $offsetY = 0) {
@@ -367,7 +380,7 @@ class swiftIMG
 	}
 
 
-	public function text($text, $startX = 0, $startY = 0, $func) {
+	public function text($text, $startX = 0, $startY = 0, $func = NULL) {
 
 		$this->getImages()->text($text, $startX, $startY, $func);
 
