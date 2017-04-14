@@ -36,7 +36,7 @@
         <script src=public/js/jquery.js></script>
         <script src=public/js/swiftIMG.js></script>
 
-        <script>
+        <!-- <script>
         
             $.ajax({
                 url: 'API/API.php',
@@ -49,7 +49,7 @@
             });
             
 
-        </script>
+        </script> -->
     </body>
 </html>
 
