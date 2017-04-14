@@ -1,4 +1,4 @@
 # Override PHP settings. More in sites/default/settings.php
 # but the following cannot be changed at runtime.
-# И сразу же после этих строк добавьте:
-# php_value memory_limit 256M
+#И сразу же после этих строк добавьте:
+php_value memory_limit 256M

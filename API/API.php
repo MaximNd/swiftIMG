@@ -2,10 +2,11 @@
 
 //use app;
 
-require "E:/OpenServer/domains/localhost/swiftIMG/app/swiftImg.php";
-require "E:/OpenServer/domains/localhost/swiftIMG/app/Histogram.php";
-require "E:/OpenServer/domains/localhost/swiftIMG/app/CannyEdgeDetector.php";
-require "E:/OpenServer/domains/localhost/swiftIMG/app/RegionGrowing.php";
+require "../app/swiftImg.php";
+require_once "../app/SobelEdgeDetector.php";
+//require_once "../app/CannyEdgeDetector.php";
+require "../app/RegionGrowing.php";
+require "../app/Histogram.php";
 
 
 
@@ -68,7 +69,7 @@ $img = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/img.jp
 //var_dump($img->getImageData());
 
 
-echo $img->outPut();
+echo $img->histogramEqualization('color')->outPut();
 
 
 ?>

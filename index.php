@@ -11,7 +11,7 @@
         <script src=public/js/less.js></script>
     </head>
     <body>
-        <header class="navbar navbar-fixed-top">
+        <!-- <header class="navbar navbar-fixed-top">
             <div class=container-fluid>
                 <div class=navbar-header>
                     <button type=button class="navbar-toggle collapsed" data-toggle=collapse data-target=#navbar aria-expanded=false aria-controls=navbar>
@@ -28,27 +28,26 @@
                     </ul>
                 </div>
             </div>
-        </header>
+        </header> -->
 
-        <img id="img" src="">
+        <!-- <img id="img" src=""> -->
         
 
         <script src=public/js/jquery.js></script>
         <script src=public/js/swiftIMG.js></script>
 
         <script>
+        
             $.ajax({
-                url: 'public/php/rotate.php',
-                data: {"path" : "images/sierra.jpg", "type" : "png", "quality" : 100},
-                type: "POST",
-                beforeSend: function() {
-                    $("#img").attr("src", data);
-                }
+                url: 'API/API.php',
+                type: 'POST',
+                data: "",
                 success: function(data) {
-                    $("#img").attr("src", data);
-                    console.log(data);
+                    $("body").append("<img src=" + data + ">");
                 }
             });
+            
+
         </script>
     </body>
 </html>
