@@ -30,7 +30,7 @@
             </div>
         </header> -->
 
-        <img id="img" src="/images/img.jpg">
+        <!-- <img id="img" src="/images/img.jpg"> -->
         
 
         <script src=public/js/jquery.js></script>
@@ -43,8 +43,8 @@
                 type: 'POST',
                 data: {param: "hello"},
                 success: function(data) {
-                    // $("body").append("<img src=" + data + ">");
-                    $("body").append(data);
+                    $("body").append("<img src=" + data + ">");
+                    //$("body").append(data);
                 }
             });
             

@@ -9,9 +9,9 @@ require "../app/RegionGrowing.php";
 require  "../app/Histogram.php";
 
 
-echo "dirname: " . dirname(__DIR__) . "<br>" . "DIR: " . __DIR__ . "<br>" . "str_replaceDirnameDIR: " . str_replace("\\", "/", dirname(__DIR__));
+//echo "dirname: " . dirname(__DIR__) . "<br>" . "DIR: " . __DIR__ . "<br>" . "str_replaceDirnameDIR: " . str_replace("\\", "/", dirname(__DIR__));
 //echo "HELLO!";
-// $img = new \app\swiftIMG(str_replace("\\", "/", dirname(__DIR__)) . '/images/img.jpg', 'jpg' , 100);
+ $img = new \app\swiftIMG('/images/img.jpg', 'jpg' , 100);
 
 // echo $imggetImages();
 
@@ -70,7 +70,7 @@ echo "dirname: " . dirname(__DIR__) . "<br>" . "DIR: " . __DIR__ . "<br>" . "str
 //var_dump($img->getImageData());
 
 
-// echo $img->outPut();
+ echo $img->outPut();
 
 
 ?>
