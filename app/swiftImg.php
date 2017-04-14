@@ -3,7 +3,9 @@
 namespace app;
 
 // include composer autoload
+
 require 'E:/OpenServer/domains/localhost/swiftIMG/vendor/autoload.php';
+
 
 // import the Intervention Image Manager Class
 use Intervention\Image\ImageManagerStatic as Image;
@@ -18,8 +20,10 @@ class swiftIMG
 	private $quality;
 	private $rows;
 	private $cols;
+
 	private $imageData = array("");
 	//private $key;
+
 
 	//The function checks the data that was written to the object
 	protected function validate() {
@@ -32,6 +36,7 @@ class swiftIMG
 	}
 
 	private function isProportional($width, $height) {
+
 
 		if(($this->getRows() / $width) == ($this->getCols() / $height)) return true;
 
@@ -49,6 +54,7 @@ class swiftIMG
 		$this->images = Image::make($images);
 		//$manager = new ImageManager(array('driver' => 'gd'));
 		//$this->images = $manager->make($images);
+
 		echo $this->images;
 		$this->format = $format;
 		$this->quality = $quality;
@@ -56,7 +62,9 @@ class swiftIMG
 		$this->cols = $this->getImages()->height();
 		$this->validate();
 		//echo "string";
+
 		//$this->key = $key;
+
 	}
 
 	public function getImages() {
@@ -91,6 +99,7 @@ class swiftIMG
 		$this->quality = $quality;
 	}
 
+
 	public function getKey() {
 		return $this->key;
 	}
@@ -113,8 +122,10 @@ class swiftIMG
 
 		$hist->histogramEqualization($this);
 
+
 		return $this;
 	}
+
 
 	public function histogramGraph($type = 'grayscale', $format = 'jpg', $quality = 90, $coef = 35) {
 		
@@ -149,6 +160,7 @@ class swiftIMG
 	public function resize($width, $height = null) {
 
 		if(is_null($height)) {
+
 			$imgWidth = $this->getRows();
 			$imgHeight = $this->getCols();
 			$height = $width * $imgHeight / $imgWidth;
@@ -156,13 +168,17 @@ class swiftIMG
 
 		$this->getImages()->resize($width, $height);
 
+
 		$this->updateData();
+
 
 		return $this;
 
 	}
 
+
 	public function crop($width = null, $height = null, $startX = null, $startY = null, $isProp = false) {
+
 
 		if($isProp && $this->isProportional($width, $height)) {
 			return $this->resize($width, $height);
@@ -178,9 +194,11 @@ class swiftIMG
 
 			$this->updateData();
 
+
 			return $this;
 		}
 	}
+
 
 	// public function trim() {
 		
@@ -251,6 +269,7 @@ class swiftIMG
 		return $this;
 	}
 
+
 	public function mirror($value = 'h') {
 
 		if($value != 'v' && $value != 'h') $value = 'h';
@@ -260,6 +279,7 @@ class swiftIMG
 		return $this;
 
 	}
+
 
 	//__________________________--Applying Effects___________________________
 	public function filter() {
@@ -292,8 +312,10 @@ class swiftIMG
 
 		$this->updateData();
 
+
 		return $this;
 	}
+
 
 	public function blur($value = 1) {
 
@@ -391,8 +413,10 @@ class swiftIMG
 
 		$this->getImages()->text($text, $startX, $startY, $func);
 
+
 		return $this;
 	}
+
 
 
 
@@ -435,6 +459,7 @@ class swiftIMG
 
 	public function outPut() {
 		return $this->getImages()->encode('data-url', $this->getQuality(), $this->getFormat());
+
 	}
 }
 

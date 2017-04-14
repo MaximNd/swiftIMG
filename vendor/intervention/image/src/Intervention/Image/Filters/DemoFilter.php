@@ -38,6 +38,7 @@ class DemoFilter implements FilterInterface
         $image->greyscale();
         $image->invert();
 
+
         return $image;
     }
 }
