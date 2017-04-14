@@ -40,8 +40,8 @@
         
             $.ajax({
                 url: 'API/API.php',
-                type: 'POST',
-                data: "",
+                type: 'GET',
+                data: {param: "hello"},
                 success: function(data) {
                     $("body").append("<img src=" + data + ">");
                     // $("body").append(data);
