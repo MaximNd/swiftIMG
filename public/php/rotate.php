@@ -4,11 +4,7 @@
 
 require "../../app/swiftImg.php";
 
-$img = new \app\swiftIMG($_POST["path"], $_POST["type"] , $_POST["quality"]);
+$img = new \app\swiftIMG("../../".$_POST["path"], $_POST["type"] , $_POST["quality"]);
 
-// echo $imggetImages();
-
-echo $img->mirror('h')->outPut();
-
-
+echo 'data:image/' . $_POST["type"] . ';base64,' . base64_encode($img->mirror('h')->outPut());
 ?>
