@@ -2,15 +2,16 @@
 
 //use app;
 
-require dirname(__DIR__) . "/app/swiftImg.php";
-require_once dirname(__DIR__) . "/app/SobelEdgeDetector.php";
+require "../app/swiftImg.php";
+require "../app/SobelEdgeDetector.php";
 //require_once "../app/CannyEdgeDetector.php";
-require dirname(__DIR__) . "/app/RegionGrowing.php";
-require dirname(__DIR__) . "/app/Histogram.php";
+require "../app/RegionGrowing.php";
+require  "../app/Histogram.php";
 
 
 // echo dirname(__DIR__) . "<br>" . __DIR__;
-$img = new \app\swiftIMG(dirname(__DIR__) . '/images/img.jpg', 'jpg' , 100);
+
+$img = new \app\swiftIMG(str_replace("\\", "/", dirname(__DIR__)) . '/images/img.jpg', 'jpg' , 100);
 
 // echo $imggetImages();
 
