@@ -35,7 +35,7 @@
 
         <script src=public/js/jquery.js></script>
         <script src=public/js/swiftIMG.js></script>
-
+        
         <script>
         
             $.ajax({
@@ -43,8 +43,8 @@
                 type: 'POST',
                 data: {param: "hello"},
                 success: function(data) {
-                    $("body").append("<img src=" + data + ">");
-                    // $("body").append(data);
+                    // $("body").append("<img src=" + data + ">");
+                    $("body").append(data);
                 }
             });
             

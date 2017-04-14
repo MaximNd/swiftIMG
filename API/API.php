@@ -10,8 +10,8 @@ require  "../app/Histogram.php";
 
 
 // echo dirname(__DIR__) . "<br>" . __DIR__;
-
-$img = new \app\swiftIMG(str_replace("\\", "/", dirname(__DIR__)) . '/images/img.jpg', 'jpg' , 100);
+echo "HELLO!";
+// $img = new \app\swiftIMG(str_replace("\\", "/", dirname(__DIR__)) . '/images/img.jpg', 'jpg' , 100);
 
 // echo $imggetImages();
 
@@ -70,7 +70,7 @@ $img = new \app\swiftIMG(str_replace("\\", "/", dirname(__DIR__)) . '/images/img
 //var_dump($img->getImageData());
 
 
-echo $img->outPut();
+// echo $img->outPut();
 
 
 ?>
