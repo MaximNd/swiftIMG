@@ -3,7 +3,7 @@
 namespace app;
 
 // include composer autoload
-require '../../vendor/autoload.php';
+require 'E:/OpenServer/domains/localhost/swiftIMG/vendor/autoload.php';
 
 // import the Intervention Image Manager Class
 use Intervention\Image\ImageManagerStatic as Image;
@@ -19,6 +19,7 @@ class swiftIMG
 	private $rows;
 	private $cols;
 	private $imageData = array("");
+	//private $key;
 
 	//The function checks the data that was written to the object
 	protected function validate() {
@@ -32,9 +33,9 @@ class swiftIMG
 
 	private function isProportional($width, $height) {
 
-	if(($this->getRows() / $width) == ($this->getCols() / $height)) return true;
+		if(($this->getRows() / $width) == ($this->getCols() / $height)) return true;
 
-	return false;
+		return false;
 
 	}
 
@@ -43,7 +44,7 @@ class swiftIMG
 		$this->cols = $this->getImages()->height();
 	}
 
-	public function __construct($images, $format = 'jpg', $quality = 90) {
+	public function __construct(/*$key,*/ $images, $format = 'jpg', $quality = 90) {
 		Image::configure(array('driver' => 'gd'));
 		$this->images = Image::make($images);
 		//$manager = new ImageManager(array('driver' => 'gd'));
@@ -55,6 +56,7 @@ class swiftIMG
 		$this->cols = $this->getImages()->height();
 		$this->validate();
 		//echo "string";
+		//$this->key = $key;
 	}
 
 	public function getImages() {
@@ -84,8 +86,13 @@ class swiftIMG
 	public function getQuality() {
 		return $this->quality;
 	}
+
 	public function setQuality($quality) {
 		$this->quality = $quality;
+	}
+
+	public function getKey() {
+		return $this->key;
 	}
 
 
@@ -130,11 +137,11 @@ class swiftIMG
 		return new swiftIMG($Sobel->SobelOperator($k), $format, $quality);
 	}
 
-	public function regionGrowing(int $T = 10, $type = 'color', $format = 'jpg', $quality = 90) {
+	public function regionGrowing(int $T = 10, $type = 'color') {
 
 		$RegGR = new \app\RegionGrowing($this, $type);
 		
-		return new swiftIMG($RegGR->grow($T), $format, $quality);
+		return $RegGR->grow($this, $T);
 	}
 
 
@@ -195,15 +202,15 @@ class swiftIMG
 
 	// ________________________Adjusting Images________________________
 
-	public function gamma($value = 40) {
-
+	public function gamma($value = 2) {
+		if($value <= 0) $value = 1;
 		$this->getImages()->gamma($value);
 
 		return $this;
 
 	}
 
-	public function bright($value = 40) {
+	public function bright($value = 15) {
 
 		if($value < -100) $value = -100;
 		else if($value > 100) $value = 100;
@@ -213,7 +220,7 @@ class swiftIMG
 		return $this;
 	}
 
-	public function contrast($value = 50) {
+	public function contrast($value = 20) {
 
 		if($value < -100) $value = -100;
 		else if($value > 100) $value = 100;
@@ -223,7 +230,7 @@ class swiftIMG
 		return $this;
 	}
 
-	public function colorize($red = 40, $green = 40, $blue = 40) {
+	public function colorize($red = 10, $green = 10, $blue = 10) {
 
 		$this->getImages()->colorize($red, $green, $blue);
 
@@ -328,14 +335,14 @@ class swiftIMG
 		return $this;
 	}
 
-	public function insertMerge($img, $opacityValue, $pos = 'top-left', $offsetX = 0, $offsetY = 0) {
+	public function insertMerge($img, $opacityValue = 100, $pos = 'top-left', $offsetX = 0, $offsetY = 0) {
 		
 		if(is_string($img))
 			$opacityImg = Image::make($img);
 		else
 			$opacityImg = Image::make($img->getImages());
-
-		$opacityImg->opacity($opacityValue);
+		if($opacityValue < 100 && $opacityValue >= 0)
+			$opacityImg->opacity($opacityValue);
 		
 		return $this->insert($opacityImg, $pos, $offsetX, $offsetY);
 	}
@@ -406,7 +413,23 @@ class swiftIMG
 	}
 
 
-	public function save($path) {
+	public function save($path = NULL) {
+
+		// if(is_null($path)) {
+		// 	$swiftIMG_site = new swiftIMG_site();
+		// 	if() {
+		// 		if($swiftIMG_site->saveImage($name, $this->getKey(), $domain)) {
+
+		// 		} else {
+
+		// 		}
+		// 	} else {
+
+		// 	}
+				
+		// }
+
+
 		return $this->getImages()->save($path, $this->getQuality());
 	}
 

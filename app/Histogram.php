@@ -3,7 +3,7 @@
 namespace app;
 
 // include composer autoload
-require '../../vendor/autoload.php';
+require 'E:/OpenServer/domains/localhost/swiftIMG/vendor/autoload.php';
 
 // import the Intervention Image Manager Class
 use Intervention\Image\ImageManagerStatic as Image;

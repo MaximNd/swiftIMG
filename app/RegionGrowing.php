@@ -3,7 +3,7 @@
 namespace app;
 
 // include composer autoload
-require '../../vendor/autoload.php';
+require 'E:/OpenServer/domains/localhost/swiftIMG/vendor/autoload.php';
 
 // import the Intervention Image Manager Class
 use Intervention\Image\ImageManagerStatic as Image;
@@ -51,7 +51,7 @@ class RegionGrowing
 		return $this->newImageRows;
 	}
 
-	public function grow(int $T) {
+	public function grow(\app\swiftImg $img, int $T) {
 		$flatImageData = [];
 		$flatNewImageData = [];
 
@@ -72,10 +72,10 @@ class RegionGrowing
 		}
 		for($i = 0; $i < $this->getNewImageRows(); ++$i) {
 			for($j = 0; $j < $this->getNewImageCols(); ++$j) {
-				$this->newImage->pixel([$this->newImageData[$i][$j],$this->newImageData[$i][$j],$this->newImageData[$i][$j]], $i, $j);
+				$img->getImages()->pixel([$this->newImageData[$i][$j],$this->newImageData[$i][$j],$this->newImageData[$i][$j]], $i, $j);
 			}
 		}
-		return $this->newImage;
+		return $img;
 
 	}
 
