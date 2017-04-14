@@ -68,7 +68,7 @@ $img = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/img.jp
 //var_dump($img->getImageData());
 
 
-echo $img->makeGrayscale()->outPut();
+echo $img->outPut();
 
 
 ?>
