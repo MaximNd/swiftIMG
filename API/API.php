@@ -69,7 +69,7 @@ $img = new \app\swiftIMG(__DIR__ . '/../images/img.jpg', 'jpg' , 100);
 //var_dump($img->getImageData());
 
 
-echo $img->histogramEqualization('color')->outPut();
+echo $img->outPut();
 
 
 ?>
