@@ -1,6 +1,9 @@
 class swiftImg {
-    constructor(img) {
+    constructor(key, img, type = "jpg", quality = 90) {
         this.img = img;
+        this.key = key;
+        this.type = type;
+        this.quality = quality;
         this.paramsArr = [];
     }
 
@@ -78,13 +81,13 @@ class swiftImg {
         this.paramsArr.push(obj);
     }
 
-    // insertResize(img, array size, $pos = 'top-left', $offsetX = 0, $offsetY = 0) {
+    insertResize(image, sizeArr, position = 'top-left', offsetX = 0, offsetY = 0) {
 
-    // }
+    }
 
-    // insertCrop(img, array $values, $pos = 'top-left', $offsetX = 0, $offsetY = 0) {
+    insertCrop(image, valuesArr, position = 'top-left', offsetX = 0, offsetY = 0) {
 
-    // }
+    }
 
     text(text, startX = 0, startY = 0) {
         let obj = {
@@ -188,9 +191,9 @@ class swiftImg {
         this.paramsArr.push(obj);
     }
 
-    // makeGIF(imgArr, param1, param2) {
+    makeGIF(imagesArr, paramOne, paramTwo) {
 
-    // }
+    }
 
     resize(width, heigh = null) {
         let obj = {
@@ -266,7 +269,7 @@ class swiftImg {
         });
     }
 
-    save() {
+    save(path = null) {
 
     }
 }
