@@ -2,15 +2,15 @@
 
 //use app;
 
-require "../app/swiftImg.php";
-require_once "../app/SobelEdgeDetector.php";
+require __DIR__ . "/../app/swiftImg.php";
+require_once __DIR__ . "/../app/SobelEdgeDetector.php";
 //require_once "../app/CannyEdgeDetector.php";
-require "../app/RegionGrowing.php";
-require "../app/Histogram.php";
+require __DIR__ . "/../app/RegionGrowing.php";
+require __DIR__ . "/../app/Histogram.php";
 
 
-
-$img = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/img.jpg', 'jpg' , 100);
+//echo __DIR__;
+$img = new \app\swiftIMG(__DIR__ . '/../images/img.jpg', 'jpg' , 100);
 
 // echo $imggetImages();
 

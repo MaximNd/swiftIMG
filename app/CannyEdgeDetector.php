@@ -3,7 +3,7 @@
 namespace app;
 
 // include composer autoload
-require 'E:/OpenServer/domains/localhost/swiftIMG/vendor/autoload.php';
+require '../vendor/autoload.php';
 require "SobelEdgeDetector.php";
 
 // import the Intervention Image Manager Class

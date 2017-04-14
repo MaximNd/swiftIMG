@@ -44,6 +44,7 @@
                 data: "",
                 success: function(data) {
                     $("body").append("<img src=" + data + ">");
+                    // $("body").append(data);
                 }
             });
             
