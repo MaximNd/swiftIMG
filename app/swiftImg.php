@@ -14,7 +14,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 * Main Class 'swiftIMG'
 */
 
-$img = new \app\swiftIMG('http://swiftimg.herokuapp.com/images/img.jpg', 'jpg' , 100);
+// $img = new \app\swiftIMG('http://swiftimg.herokuapp.com/images/img.jpg', 'jpg' , 100);
 class swiftIMG
 {
 	private $images;
@@ -52,12 +52,12 @@ class swiftIMG
 	}
 
 	public function __construct(/*$key,*/ $images, $format = 'jpg', $quality = 90) {
-		echo "start_constructor";
+		// echo "start_constructor";
 		Image::configure(array('driver' => 'gd'));
-		echo "1";
+		// echo "1";
 		// echo $images;
-		echo $this->images = Image::make($images);
-		echo "2";
+		$this->images = Image::make($images);
+		// echo "2";
 		//$manager = new ImageManager(array('driver' => 'gd'));
 		//$this->images = $manager->make($images);
 
@@ -68,7 +68,7 @@ class swiftIMG
 		$this->cols = $this->getImages()->height();
 		$this->validate();
 		//echo "string";
-		echo "end_constructor";
+		// echo "end_constructor";
 		//$this->key = $key;
 
 	}
