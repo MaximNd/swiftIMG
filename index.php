@@ -30,7 +30,7 @@
             </div>
         </header> -->
 
-        <img id="img" src="/app/images/img.jpg">
+        <img id="img" src="app/images/img.jpg">
         
 
         <script src=public/js/jquery.js></script>
