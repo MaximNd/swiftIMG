@@ -29,8 +29,15 @@
                 </div>
             </div>
         </header> -->
+            
+        <?php
+            $path = 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/MilfordSound.jpg/600px-MilfordSound.jpg';
+            $type = pathinfo($path, PATHINFO_EXTENSION);
+            $data = file_get_contents($path);
+            $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+        ?>
 
-        <img id="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/MilfordSound.jpg/600px-MilfordSound.jpg">
+        <img id="img" src="<?php echo $base64; ?>">
         
 
         <script src=public/js/jquery.js></script>
