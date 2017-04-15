@@ -14,7 +14,7 @@ require  "../app/Histogram.php";
 
 // var_dump($_SERVER["DOCUMENT_ROOT"]);
 
- $img = new \app\swiftIMG($_SERVER["DOCUMENT_ROOT"] . '/testheroku/images/img.jpg', 'jpg' , 100);
+ $img = new \app\swiftIMG($_SERVER["DOCUMENT_ROOT"] . '/images/img.jpg', 'jpg' , 100);
 
 // echo $imggetImages();
 
