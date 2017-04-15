@@ -55,7 +55,7 @@ class swiftIMG
 		//$manager = new ImageManager(array('driver' => 'gd'));
 		//$this->images = $manager->make($images);
 
-		echo $this->images;
+		//echo $this->images;
 		$this->format = $format;
 		$this->quality = $quality;
 		$this->rows = $this->getImages()->width();
