@@ -19,7 +19,7 @@ require  "Histogram.php";
 // echo $_SERVER["DOCUMENT_ROOT"] . '/images/img.jpg' . "<br>";
 
 // echo __DIR__;
- $img = new \app\swiftIMG('http://swiftimg.herokuapp.com/images/img.jpg', 'jpg' , 100);
+ $img = new \app\swiftIMG('https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/MilfordSound.jpg/600px-MilfordSound.jpg', 'jpg' , 100);
 
 // echo $imggetImages();
 
