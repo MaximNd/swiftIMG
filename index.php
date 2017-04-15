@@ -31,7 +31,7 @@
         </header> -->
 
         <!-- <img id="img" src="/images/img.jpg"> -->
-        <?php require "http://swiftimg.herokuapp.com/API/API.php"; ?>
+        
 
         <script src=public/js/jquery.js></script>
         <script src=public/js/swiftIMG.js></script>
@@ -39,7 +39,7 @@
         <script>
         
             $.ajax({
-                url: 'API/API.php',
+                url: 'app/API.php',
                 type: 'POST',
                 data: {param: "hello"},
                 success: function(data) {
