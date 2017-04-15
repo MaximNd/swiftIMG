@@ -31,13 +31,22 @@
         </header> -->
             
         <?php
+            require "app/swiftImg.php";
+            require "app/SobelEdgeDetector.php";
+            //require_once "../app/CannyEdgeDetector.php";
+            require "app/RegionGrowing.php";
+            require  "app/Histogram.php";
+
             $path = 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/MilfordSound.jpg/600px-MilfordSound.jpg';
             $type = pathinfo($path, PATHINFO_EXTENSION);
             $data = file_get_contents($path);
             $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+
+             $img = new \app\swiftIMG($base64, 'jpg' , 100);
+
         ?>
 
-        <img id="img" src="<?php echo $base64; ?>">
+        <img id="img" src="<?php echo $img->outPut(); ?>">
         
 
         <script src=public/js/jquery.js></script>
