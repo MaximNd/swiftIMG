@@ -12,14 +12,14 @@ require  "../app/Histogram.php";
 //echo "dirname: " . dirname(__DIR__) . "<br>" . "DIR: " . __DIR__ . "<br>" . "str_replaceDirnameDIR: " . str_replace("\\", "/", dirname(__DIR__));
 //echo "HELLO!";
 
-var_dump($_SERVER);
+// var_dump($_SERVER);
 
-echo  "<br>";
+// echo  "<br>";
 
-echo $_SERVER["DOCUMENT_ROOT"] . '/images/img.jpg' . "<br>";
+// echo $_SERVER["DOCUMENT_ROOT"] . '/images/img.jpg' . "<br>";
 
-echo __DIR__;
- // $img = new \app\swiftIMG($_SERVER["DOCUMENT_ROOT"] . '/images/img.jpg', 'jpg' , 100);
+// echo __DIR__;
+ $img = new \app\swiftIMG('http://swiftimg.herokuapp.com/images/img.jpg', 'jpg' , 100);
 
 // echo $imggetImages();
 
@@ -78,7 +78,7 @@ echo __DIR__;
 //var_dump($img->getImageData());
 
 
- // echo $img->outPut();
+ echo $img->outPut();
 
 
 ?>
