@@ -55,6 +55,7 @@ class swiftIMG
 		echo "start_constructor";
 		Image::configure(array('driver' => 'gd'));
 		echo "1";
+		echo $images;
 		$this->images = Image::make($images);
 		echo "2";
 		//$manager = new ImageManager(array('driver' => 'gd'));
