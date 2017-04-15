@@ -19,7 +19,7 @@ require  "../app/Histogram.php";
 // echo $_SERVER["DOCUMENT_ROOT"] . '/images/img.jpg' . "<br>";
 
 // echo __DIR__;
- $img = new \app\swiftIMG('http://swiftimg.herokuapp.com/images/img.jpg', 'jpg' , 100);
+ $img = new \app\swiftIMG('https://habrastorage.org/storage/84b5b4e0/f9b672aa/914b734a/398b3d26.png', 'jpg' , 100);
 
 // echo $imggetImages();
 
