@@ -19,7 +19,13 @@ require  "Histogram.php";
 // echo $_SERVER["DOCUMENT_ROOT"] . '/images/img.jpg' . "<br>";
 
 // echo __DIR__;
- $img = new \app\swiftIMG('https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/MilfordSound.jpg/600px-MilfordSound.jpg', 'jpg' , 100);
+
+$path = 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/MilfordSound.jpg/600px-MilfordSound.jpg';
+$type = pathinfo($path, PATHINFO_EXTENSION);
+$data = file_get_contents($path);
+$base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+
+ $img = new \app\swiftIMG($base64, 'jpg' , 100);
 
 // echo $imggetImages();
 
