@@ -14,6 +14,11 @@ require  "../app/Histogram.php";
 
 var_dump($_SERVER);
 
+echo  "<br>";
+
+echo $_SERVER["DOCUMENT_ROOT"] . '/images/img.jpg' . "<br>";
+
+echo __DIR__;
  // $img = new \app\swiftIMG($_SERVER["DOCUMENT_ROOT"] . '/images/img.jpg', 'jpg' , 100);
 
 // echo $imggetImages();
