@@ -12,7 +12,7 @@ require  "../app/Histogram.php";
 //echo "dirname: " . dirname(__DIR__) . "<br>" . "DIR: " . __DIR__ . "<br>" . "str_replaceDirnameDIR: " . str_replace("\\", "/", dirname(__DIR__));
 //echo "HELLO!";
 
-var_dump($_SERVER["DOCUMENT_ROOT"]);
+var_dump($_SERVER);
 
  // $img = new \app\swiftIMG($_SERVER["DOCUMENT_ROOT"] . '/images/img.jpg', 'jpg' , 100);
 
