@@ -30,13 +30,13 @@
             </div>
         </header> -->
 
-        <!-- <img id="img" src="/images/img.jpg"> -->
+        <img id="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/MilfordSound.jpg/600px-MilfordSound.jpg">
         
 
         <script src=public/js/jquery.js></script>
         <script src=public/js/swiftIMG.js></script>
         
-        <script>
+        <!-- <script>
         
             $.ajax({
                 url: 'app/API.php',
@@ -49,7 +49,7 @@
             });
             
 
-        </script>
+        </script> -->
     </body>
 </html>
 
