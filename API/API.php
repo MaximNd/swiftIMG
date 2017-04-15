@@ -11,7 +11,10 @@ require  "../app/Histogram.php";
 
 //echo "dirname: " . dirname(__DIR__) . "<br>" . "DIR: " . __DIR__ . "<br>" . "str_replaceDirnameDIR: " . str_replace("\\", "/", dirname(__DIR__));
 //echo "HELLO!";
- $img = new \app\swiftIMG('/images/img.jpg', 'jpg' , 100);
+
+// var_dump($_SERVER["DOCUMENT_ROOT"]);
+
+ $img = new \app\swiftIMG($_SERVER["DOCUMENT_ROOT"] . '/testheroku/images/img.jpg', 'jpg' , 100);
 
 // echo $imggetImages();
 
