@@ -54,7 +54,9 @@ class swiftIMG
 	public function __construct(/*$key,*/ $images, $format = 'jpg', $quality = 90) {
 		echo "start_constructor";
 		Image::configure(array('driver' => 'gd'));
+		echo "1";
 		$this->images = Image::make($images);
+		echo "2";
 		//$manager = new ImageManager(array('driver' => 'gd'));
 		//$this->images = $manager->make($images);
 
