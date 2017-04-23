@@ -53,17 +53,17 @@
     },
     {
         "name": "guzzlehttp/psr7",
-        "version": "1.4.1",
-        "version_normalized": "1.4.1.0",
+        "version": "1.4.2",
+        "version_normalized": "1.4.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/guzzle/psr7.git",
-            "reference": "0d6c7ca039329247e4f0f8f8f6506810e8248855"
+            "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/psr7/zipball/0d6c7ca039329247e4f0f8f8f6506810e8248855",
-            "reference": "0d6c7ca039329247e4f0f8f8f6506810e8248855",
+            "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+            "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
             "shasum": ""
         },
         "require": {
@@ -76,7 +76,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.0"
         },
-        "time": "2017-02-27 10:51:17",
+        "time": "2017-03-20 17:10:46",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -120,17 +120,17 @@
     },
     {
         "name": "intervention/image",
-        "version": "2.3.11",
-        "version_normalized": "2.3.11.0",
+        "version": "2.3.12",
+        "version_normalized": "2.3.12.0",
         "source": {
             "type": "git",
             "url": "https://github.com/Intervention/image.git",
-            "reference": "e8881fd99b9804b29e02d6d1c2c15ee459335cf1"
+            "reference": "5c92ea4503ccb000ce6a922efbf272638c64a68c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Intervention/image/zipball/e8881fd99b9804b29e02d6d1c2c15ee459335cf1",
-            "reference": "e8881fd99b9804b29e02d6d1c2c15ee459335cf1",
+            "url": "https://api.github.com/repos/Intervention/image/zipball/5c92ea4503ccb000ce6a922efbf272638c64a68c",
+            "reference": "5c92ea4503ccb000ce6a922efbf272638c64a68c",
             "shasum": ""
         },
         "require": {
@@ -147,7 +147,7 @@
             "ext-imagick": "to use Imagick based image processing.",
             "intervention/imagecache": "Caching extension for the Intervention Image library"
         },
-        "time": "2017-02-04 10:37:19",
+        "time": "2017-04-22 14:50:13",
         "type": "library",
         "extra": {
             "branch-alias": {

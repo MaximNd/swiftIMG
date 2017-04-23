@@ -12,7 +12,6 @@ class Driver extends \Intervention\Image\AbstractDriver
      */
     public function __construct(Decoder $decoder = null, Encoder $encoder = null)
     {
-        echo "GD driver start";
         if ( ! $this->coreAvailable()) {
             throw new \Intervention\Image\Exception\NotSupportedException(
                 "GD Library extension not available with this PHP installation."
@@ -21,7 +20,6 @@ class Driver extends \Intervention\Image\AbstractDriver
 
         $this->decoder = $decoder ? $decoder : new Decoder;
         $this->encoder = $encoder ? $encoder : new Encoder;
-        echo "GD driver end";
     }
 
     /**
@@ -63,13 +61,6 @@ class Driver extends \Intervention\Image\AbstractDriver
      */
     protected function coreAvailable()
     {
-        if(!extension_loaded('gd')) {
-            echo "gd!!!!";
-        }
-        if(!function_exists('gd_info')) {
-            echo "gd_info!!!!";
-        }
-
         return (extension_loaded('gd') && function_exists('gd_info'));
     }
 
