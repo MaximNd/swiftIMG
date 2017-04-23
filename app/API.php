@@ -86,7 +86,7 @@ $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
 //var_dump($img->getImageData());
 
 
-  echo $img->outPut();
+  echo $img->makeGrayscale()->outPut();
 
 
 ?>

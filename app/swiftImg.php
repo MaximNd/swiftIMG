@@ -137,13 +137,13 @@ class swiftIMG
 	}
 
 	public function __construct(/*$key,*/ $images, $format = 'jpg', $quality = 90) {
-		 echo "start_constructor";
+		//echo "start_constructor";
 
 		Image::configure(array('driver' => 'gd'));
 		// echo "1";
 		// echo $images;
 		$this->images = Image::make($images);
-		echo "end_constructor1";
+		//echo "end_constructor1";
 		// echo "2";
 		//$manager = new ImageManager(array('driver' => 'gd'));
 		//$this->images = $manager->make($images);
@@ -151,11 +151,11 @@ class swiftIMG
 		//echo $this->images;
 		$this->format = $format;
 		$this->quality = $quality;
-		//$this->rows = $this->getImages()->width();
-		//$this->cols = $this->getImages()->height();
+		$this->rows = $this->getImages()->width();
+		$this->cols = $this->getImages()->height();
 		$this->validate();
 		//echo "string";
-		echo "end_constructorFinal";
+		//echo "end_constructorFinal";
 		//$this->key = $key;
 
 	}
