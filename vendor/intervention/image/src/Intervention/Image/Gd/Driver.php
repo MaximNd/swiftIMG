@@ -14,6 +14,7 @@ class Driver extends \Intervention\Image\AbstractDriver
     {
         echo "GD driver start";
         if ( ! $this->coreAvailable()) {
+            echo 'GD Library extension not available with this PHP installation.';
             throw new \Intervention\Image\Exception\NotSupportedException(
                 "GD Library extension not available with this PHP installation."
             );
