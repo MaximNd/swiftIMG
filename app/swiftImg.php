@@ -137,7 +137,8 @@ class swiftIMG
 	}
 
 	public function __construct(/*$key,*/ $images, $format = 'jpg', $quality = 90) {
-		// echo "start_constructor";
+		 echo "start_constructor";
+
 		Image::configure(array('driver' => 'gd'));
 		// echo "1";
 		// echo $images;
@@ -153,7 +154,7 @@ class swiftIMG
 		//$this->cols = $this->getImages()->height();
 		$this->validate();
 		//echo "string";
-		// echo "end_constructor";
+		 echo "end_constructor";
 		//$this->key = $key;
 
 	}

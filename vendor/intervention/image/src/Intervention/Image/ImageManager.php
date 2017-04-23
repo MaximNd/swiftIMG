@@ -22,10 +22,8 @@ class ImageManager
      */
     public function __construct(array $config = array())
     {
-        echo "string1";
         $this->checkRequirements();
         $this->configure($config);
-        echo "string2";
     }
 
     /**
@@ -107,7 +105,6 @@ class ImageManager
             $driverclass = sprintf('Intervention\\Image\\%s\\Driver', $drivername);
 
             if (class_exists($driverclass)) {
-                echo "string3";
                 return new $driverclass;
             }
 
@@ -117,7 +114,6 @@ class ImageManager
         }
 
         if ($this->config['driver'] instanceof AbstractDriver) {
-            echo "string4";
             return $this->config['driver'];
         }
 
