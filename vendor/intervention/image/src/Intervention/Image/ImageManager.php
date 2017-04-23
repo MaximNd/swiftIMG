@@ -22,8 +22,10 @@ class ImageManager
      */
     public function __construct(array $config = array())
     {
+        echo "string1";
         $this->checkRequirements();
         $this->configure($config);
+        echo "string2";
     }
 
     /**
