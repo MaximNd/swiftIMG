@@ -107,6 +107,7 @@ class ImageManager
             $driverclass = sprintf('Intervention\\Image\\%s\\Driver', $drivername);
 
             if (class_exists($driverclass)) {
+                echo "string3";
                 return new $driverclass;
             }
 
@@ -116,6 +117,7 @@ class ImageManager
         }
 
         if ($this->config['driver'] instanceof AbstractDriver) {
+            echo "string4";
             return $this->config['driver'];
         }
 
