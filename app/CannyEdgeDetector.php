@@ -3,8 +3,8 @@
 namespace app;
 
 // include composer autoload
-require 'vendor/autoload.php';
-require "app/SobelEdgeDetector.php";
+require '../vendor/autoload.php';
+require "SobelEdgeDetector.php";
 
 // import the Intervention Image Manager Class
 use Intervention\Image\ImageManagerStatic as Image;

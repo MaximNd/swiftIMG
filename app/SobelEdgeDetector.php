@@ -3,7 +3,7 @@
 namespace app;
 
 // include composer autoload
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
 
 // import the Intervention Image Manager Class
