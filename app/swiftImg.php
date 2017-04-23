@@ -143,6 +143,7 @@ class swiftIMG
 		// echo "1";
 		// echo $images;
 		$this->images = Image::make($images);
+		echo "end_constructor1";
 		// echo "2";
 		//$manager = new ImageManager(array('driver' => 'gd'));
 		//$this->images = $manager->make($images);
@@ -154,7 +155,7 @@ class swiftIMG
 		//$this->cols = $this->getImages()->height();
 		$this->validate();
 		//echo "string";
-		 echo "end_constructor";
+		echo "end_constructorFinal";
 		//$this->key = $key;
 
 	}
