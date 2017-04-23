@@ -551,8 +551,7 @@ class swiftIMG
 	}
 
 	public function outPut() {
-		//return $this->getImages()->encode('data-url', $this->getQuality(), $this->getFormat());
-	return $this->images;
+		return $this->getImages()->encode('data-url', $this->getQuality(), $this->getFormat());
 	}
 }
 
