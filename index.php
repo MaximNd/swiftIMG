@@ -43,8 +43,8 @@
                 type: 'POST',
                 data: {param: "hello"},
                 success: function(data) {
-                    $("body").append("<img src=" + data + ">");
-                    //$("body").append(data);
+                    //$("body").append("<img src=" + data + ">");
+                    $("body").append(data);
                 }
             });
             

@@ -27,7 +27,7 @@ $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
 
  $img = new \app\swiftIMG($base64, 'jpg' , 100);
 
-// var_dump($img);
+ var_dump($img);
 
 // echo $imggetImages();
 
@@ -86,7 +86,7 @@ $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
 //var_dump($img->getImageData());
 
 
-  echo $img->outPut();
+  //echo $img->outPut();
 
 
 ?>
