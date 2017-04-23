@@ -5,7 +5,92 @@ namespace app;
 // include composer autoload
 
 require '../vendor/autoload.php';
+// require '../intervention/image/src/Intervention/Image/AbstractColor.php';
+// require '../intervention/image/src/Intervention/Image/AbstractDecoder.php';
+// require '../intervention/image/src/Intervention/Image/AbstractDriver.php';
+// require '../intervention/image/src/Intervention/Image/AbstractEncoder.php';
+// require '../intervention/image/src/Intervention/Image/AbstractFont.php';
+// require '../intervention/image/src/Intervention/Image/AbstractShape.php';
+// require '../intervention/image/src/Intervention/Image/Commands/AbstractCommand.php';
+// require '../intervention/image/src/Intervention/Image/Commands/Argument.php';
+// require '../intervention/image/src/Intervention/Image/Commands/ChecksumCommand.php';
+// require '../intervention/image/src/Intervention/Image/Commands/CircleCommand.php';
+// require '../intervention/image/src/Intervention/Image/Commands/EllipseCommand.php';
+// require '../intervention/image/src/Intervention/Image/Commands/ExifCommand.php';
+// require '../intervention/image/src/Intervention/Image/Commands/IptcCommand.php';
+// require '../intervention/image/src/Intervention/Image/Commands/LineCommand.php';
+// require '../intervention/image/src/Intervention/Image/Commands/OrientateCommand.php';
+// require '../intervention/image/src/Intervention/Image/Commands/PolygonCommand.php';
+// require '../intervention/image/src/Intervention/Image/Commands/PsrResponseCommand.php';
+// require '../intervention/image/src/Intervention/Image/Commands/RectangleCommand.php';
+// require '../intervention/image/src/Intervention/Image/Commands/ResponseCommand.php';
+// require '../intervention/image/src/Intervention/Image/Commands/StreamCommand.php';
+// require '../intervention/image/src/Intervention/Image/Commands/TextCommand.php';
+// require '../intervention/image/src/Intervention/Image/Constraint.php';
+// require '../intervention/image/src/Intervention/Image/Exception/ImageException.php';
+// require '../intervention/image/src/Intervention/Image/Exception/InvalidArgumentException.php';
+// require '../intervention/image/src/Intervention/Image/Exception/MissingDependencyException.php';
+// require '../intervention/image/src/Intervention/Image/Exception/NotFoundException.php';
+// require '../intervention/image/src/Intervention/Image/Exception/NotReadableException.php';
+// require '../intervention/image/src/Intervention/Image/Exception/NotSupportedException.php';
+// require '../intervention/image/src/Intervention/Image/Exception/NotWritableException.php';
+// require '../intervention/image/src/Intervention/Image/Exception/RuntimeException.php';
+// require '../intervention/image/src/Intervention/Image/Facades/Image.php';
+// require '../intervention/image/src/Intervention/Image/File.php';
+// require '../intervention/image/src/Intervention/Image/Filters/DemoFilter.php';
+// require '../intervention/image/src/Intervention/Image/Filters/FilterInterface.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Color.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/BackupCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/BlurCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/BrightnessCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/ColorizeCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/ContrastCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/CropCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/DestroyCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/FillCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/FitCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/FlipCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/GammaCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/GetSizeCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/GreyscaleCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/HeightenCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/InsertCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/InterlaceCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/InvertCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/LimitColorsCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/MaskCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/OpacityCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/PickColorCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/PixelateCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/PixelCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/ResetCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/ResizeCanvasCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/ResizeCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/RotateCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/SharpenCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/TrimCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Commands/WidenCommand.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Decoder.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Driver.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Encoder.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Font.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Shapes/CircleShape.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Shapes/EllipseShape.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Shapes/LineShape.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Shapes/PolygonShape.php';
+// require '../intervention/image/src/Intervention/Image/Gd/Shapes/RectangleShape.php';
+// require '../intervention/image/src/Intervention/Image/Image.php';
+// require '../intervention/image/src/Intervention/Image/ImageManager.php';
+// require '../intervention/image/src/Intervention/Image/ImageManagerStatic.php';
+// require '../intervention/image/src/Intervention/Image/ImageServiceProvider.php';
+// require '../intervention/image/src/Intervention/Image/ImageServiceProviderLaravel4.php';
+// require '../intervention/image/src/Intervention/Image/ImageServiceProviderLaravel5.php';
+// require '../intervention/image/src/Intervention/Image/ImageServiceProviderLeague.php';
+// require '../intervention/image/src/Intervention/Image/ImageServiceProviderLumen.php';
 
+// require '../intervention/image/src/Intervention/Image/Point.php';
+// require '../intervention/image/src/Intervention/Image/Response.php';
+// require '../intervention/image/src/Intervention/Image/Size.php';
 
 // import the Intervention Image Manager Class
 use Intervention\Image\ImageManagerStatic as Image;
@@ -64,8 +149,8 @@ class swiftIMG
 		//echo $this->images;
 		$this->format = $format;
 		$this->quality = $quality;
-		$this->rows = $this->getImages()->width();
-		$this->cols = $this->getImages()->height();
+		//$this->rows = $this->getImages()->width();
+		//$this->cols = $this->getImages()->height();
 		$this->validate();
 		//echo "string";
 		// echo "end_constructor";
@@ -464,8 +549,8 @@ class swiftIMG
 	}
 
 	public function outPut() {
-		return $this->getImages()->encode('data-url', $this->getQuality(), $this->getFormat());
-
+		//return $this->getImages()->encode('data-url', $this->getQuality(), $this->getFormat());
+	return $this->images;
 	}
 }
 

@@ -54,7 +54,8 @@ class ImageManagerStatic
      */
     public static function make($data)
     {
-        return self::getManager()->make($data);
+        return 'Hello';
+        //return self::getManager()->make($data);
     }
 
     /**
