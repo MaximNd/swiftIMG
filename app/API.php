@@ -25,7 +25,7 @@ $type = pathinfo($path, PATHINFO_EXTENSION);
 $data = file_get_contents($path);
 $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
 
- $img = new \app\swiftIMG($base64, 'jpg' , 100);
+//$img = new \app\swiftIMG($base64, 'jpg' , 100);
 
  //var_dump($img);
 //echo $base64;
@@ -41,7 +41,7 @@ $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
 
 // $img6 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/LenaDark.png', 'jpg', 100);
 
-// $img7 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/lena.jpg', 'jpg', 100);
+$img7 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/lena.jpg', 'jpg', 100);
 
 // $img8 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/test4.jpg', 'jpg', 100);
 
@@ -86,7 +86,7 @@ $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
 //var_dump($img->getImageData());
 
 
-  echo $img->makeGrayscale()->outPut();
+  echo $img7->histogramEqualization('color')->outPut();
 
 
 ?>
