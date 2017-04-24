@@ -1,6 +1,6 @@
 <?php 
 	if (isset($_COOKIE["full_name"]) && isset($_COOKIE["social_id"])) {
-		include($_SERVER['DOCUMENT_ROOT'].'/app/include/swiftIMG_site.php');
+		include($_SERVER['DOCUMENT_ROOT'].'/app/swiftIMG_site.php');
 		$swiftIMG = new swiftIMG_site();
 		$user = $swiftIMG->getUser($_COOKIE["full_name"], $_COOKIE["social_id"]);
 
