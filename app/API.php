@@ -41,7 +41,7 @@ $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
 
 // $img6 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/LenaDark.png', 'jpg', 100);
 
-$img7 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/lena.jpg', 'jpg', 100);
+$img7 = new \app\swiftIMG('https://swiftimg.herokuapp.com/images/lena.jpg', 'jpg', 100);
 
 // $img8 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/test4.jpg', 'jpg', 100);
 
