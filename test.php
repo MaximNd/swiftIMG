@@ -9,7 +9,7 @@
             echo $_SERVER['HTTP_HOST'];
         ?>
         <script>
-        	console.log(location.hostname);
+        	console.log(location.protocol + "//" + location.hostname);
         </script>
 </body>
 </html>
