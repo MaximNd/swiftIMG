@@ -32,21 +32,23 @@
 
         <!-- <img id="img" src="/images/img.jpg"> -->
         
-
+<?php 
+            echo $_SERVER['HTTP_HOST'];
+        ?>
         <script src=public/js/jquery.js></script>
         <script src=public/js/swiftIMG.js></script>
         
         <script>
         
-            $.ajax({
-                url: 'app/API.php',
-                type: 'POST',
-                data: {param: "hello"},
-                success: function(data) {
-                    $("body").append("<img src=" + data + ">");
-                    //$("body").append(data);
-                }
-            });
+            // $.ajax({
+            //     url: 'app/API.php',
+            //     type: 'POST',
+            //     data: {param: "hello"},
+            //     success: function(data) {
+            //         $("body").append("<img src=" + data + ">");
+            //         //$("body").append(data);
+            //     }
+            // });
             
 
         </script>
