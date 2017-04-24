@@ -6,7 +6,7 @@
 </head>
 <body>
 	<?php 
-            $url = "https://swiftimg.herokuapp.com";
+            $url = "swiftimg.herokuapp.com";
 
 			// Validate url
 			if (!filter_var($url, FILTER_VALIDATE_URL) === false) {
