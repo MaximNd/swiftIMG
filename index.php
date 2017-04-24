@@ -32,8 +32,8 @@
 
         <!-- <img id="img" src="/images/img.jpg"> -->
         
-<?php 
-            echo $_SERVER['HTTP_HOST'];
+        <?php   
+            phpinfo();    
         ?>
         <script src=public/js/jquery.js></script>
         <script src=public/js/swiftIMG.js></script>
