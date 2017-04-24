@@ -14,7 +14,7 @@ use Mysqli;
         }
 
         function connectDB() {
-            $this->mysqli = new mysqli('localhost', 'root', '', "vitalijm_swiftimg");
+            $this->mysqli = new mysqli('eu-cdbr-west-01.clearbd.com', 'b88386567900a1', 'f1ef4302', "heroku_277db8570804040");
 		    $this->mysqli->query("SET NAMES 'utf8'");
         }
 
