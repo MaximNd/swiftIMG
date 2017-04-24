@@ -5,92 +5,7 @@ namespace app;
 // include composer autoload
 
 require '../vendor/autoload.php';
-// require '../intervention/image/src/Intervention/Image/AbstractColor.php';
-// require '../intervention/image/src/Intervention/Image/AbstractDecoder.php';
-// require '../intervention/image/src/Intervention/Image/AbstractDriver.php';
-// require '../intervention/image/src/Intervention/Image/AbstractEncoder.php';
-// require '../intervention/image/src/Intervention/Image/AbstractFont.php';
-// require '../intervention/image/src/Intervention/Image/AbstractShape.php';
-// require '../intervention/image/src/Intervention/Image/Commands/AbstractCommand.php';
-// require '../intervention/image/src/Intervention/Image/Commands/Argument.php';
-// require '../intervention/image/src/Intervention/Image/Commands/ChecksumCommand.php';
-// require '../intervention/image/src/Intervention/Image/Commands/CircleCommand.php';
-// require '../intervention/image/src/Intervention/Image/Commands/EllipseCommand.php';
-// require '../intervention/image/src/Intervention/Image/Commands/ExifCommand.php';
-// require '../intervention/image/src/Intervention/Image/Commands/IptcCommand.php';
-// require '../intervention/image/src/Intervention/Image/Commands/LineCommand.php';
-// require '../intervention/image/src/Intervention/Image/Commands/OrientateCommand.php';
-// require '../intervention/image/src/Intervention/Image/Commands/PolygonCommand.php';
-// require '../intervention/image/src/Intervention/Image/Commands/PsrResponseCommand.php';
-// require '../intervention/image/src/Intervention/Image/Commands/RectangleCommand.php';
-// require '../intervention/image/src/Intervention/Image/Commands/ResponseCommand.php';
-// require '../intervention/image/src/Intervention/Image/Commands/StreamCommand.php';
-// require '../intervention/image/src/Intervention/Image/Commands/TextCommand.php';
-// require '../intervention/image/src/Intervention/Image/Constraint.php';
-// require '../intervention/image/src/Intervention/Image/Exception/ImageException.php';
-// require '../intervention/image/src/Intervention/Image/Exception/InvalidArgumentException.php';
-// require '../intervention/image/src/Intervention/Image/Exception/MissingDependencyException.php';
-// require '../intervention/image/src/Intervention/Image/Exception/NotFoundException.php';
-// require '../intervention/image/src/Intervention/Image/Exception/NotReadableException.php';
-// require '../intervention/image/src/Intervention/Image/Exception/NotSupportedException.php';
-// require '../intervention/image/src/Intervention/Image/Exception/NotWritableException.php';
-// require '../intervention/image/src/Intervention/Image/Exception/RuntimeException.php';
-// require '../intervention/image/src/Intervention/Image/Facades/Image.php';
-// require '../intervention/image/src/Intervention/Image/File.php';
-// require '../intervention/image/src/Intervention/Image/Filters/DemoFilter.php';
-// require '../intervention/image/src/Intervention/Image/Filters/FilterInterface.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Color.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/BackupCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/BlurCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/BrightnessCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/ColorizeCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/ContrastCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/CropCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/DestroyCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/FillCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/FitCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/FlipCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/GammaCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/GetSizeCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/GreyscaleCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/HeightenCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/InsertCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/InterlaceCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/InvertCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/LimitColorsCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/MaskCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/OpacityCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/PickColorCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/PixelateCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/PixelCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/ResetCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/ResizeCanvasCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/ResizeCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/RotateCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/SharpenCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/TrimCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Commands/WidenCommand.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Decoder.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Driver.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Encoder.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Font.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Shapes/CircleShape.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Shapes/EllipseShape.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Shapes/LineShape.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Shapes/PolygonShape.php';
-// require '../intervention/image/src/Intervention/Image/Gd/Shapes/RectangleShape.php';
-// require '../intervention/image/src/Intervention/Image/Image.php';
-// require '../intervention/image/src/Intervention/Image/ImageManager.php';
-// require '../intervention/image/src/Intervention/Image/ImageManagerStatic.php';
-// require '../intervention/image/src/Intervention/Image/ImageServiceProvider.php';
-// require '../intervention/image/src/Intervention/Image/ImageServiceProviderLaravel4.php';
-// require '../intervention/image/src/Intervention/Image/ImageServiceProviderLaravel5.php';
-// require '../intervention/image/src/Intervention/Image/ImageServiceProviderLeague.php';
-// require '../intervention/image/src/Intervention/Image/ImageServiceProviderLumen.php';
 
-// require '../intervention/image/src/Intervention/Image/Point.php';
-// require '../intervention/image/src/Intervention/Image/Response.php';
-// require '../intervention/image/src/Intervention/Image/Size.php';
 
 // import the Intervention Image Manager Class
 use Intervention\Image\ImageManagerStatic as Image;
@@ -109,7 +24,7 @@ class swiftIMG
 	private $cols;
 
 	private $imageData = array("");
-	//private $key;
+	private $key;
 
 
 	//The function checks the data that was written to the object
@@ -123,7 +38,13 @@ class swiftIMG
 	}
 
 	private function isProportional($width, $height) {
+		if(is_null($width)) {
+			$width = $this->getRows();
+		}
 
+		if(is_null($height)) {
+			$height = $this->getCols();
+		}
 
 		if(($this->getRows() / $width) == ($this->getCols() / $height)) return true;
 
@@ -136,28 +57,15 @@ class swiftIMG
 		$this->cols = $this->getImages()->height();
 	}
 
-	public function __construct(/*$key,*/ $images, $format = 'jpg', $quality = 90) {
-		//echo "start_constructor";
-
-		Image::configure(array('driver' => 'gd'));
-		// echo "1";
-		// echo $images;
-		$this->images = Image::make($images);
-		//echo "end_constructor1";
-		// echo "2";
-		//$manager = new ImageManager(array('driver' => 'gd'));
-		//$this->images = $manager->make($images);
-
-		//echo $this->images;
-		$this->format = $format;
-		$this->quality = $quality;
-		$this->rows = $this->getImages()->width();
-		$this->cols = $this->getImages()->height();
-		$this->validate();
-		//echo "string";
-		//echo "end_constructorFinal";
-		//$this->key = $key;
-
+	public function __construct($key, $images, $format = 'jpg', $quality = 90) {
+			Image::configure(array('driver' => 'gd'));
+			$this->images = Image::make($images);
+			$this->format = $format;
+			$this->quality = $quality;
+			$this->rows = $this->getImages()->width();
+			$this->cols = $this->getImages()->height();
+			$this->validate();
+			$this->key = $key;	
 	}
 
 	public function getImages() {
@@ -224,21 +132,21 @@ class swiftIMG
 		
 		$hist = new \app\Histogram($this, $type);
 
-		return new swiftIMG($hist->histogramGraph($this, $coef), $format, $quality);
+		return new swiftIMG($this->getKey(), $hist->histogramGraph($this, $coef), $format, $quality);
 	}
 
 	public function CannyBorder($type = 'color', $format = 'jpg', $quality = 90, $sigma = 1, $sobelK = 1, $low = 50, $high = 150, $size = 2) {
 
 		$Canny = new \app\CannyEdgeDetector($this, $type);
 		
-		return new swiftIMG($Canny->CannyOperator($sigma, $sobelK, $low, $high, $size), $format, $quality);
+		return new swiftIMG($this->getKey(), $Canny->CannyOperator($sigma, $sobelK, $low, $high, $size), $format, $quality);
 	}
 
 	public function SobelBorder($type = 'color', $k = 1, $format = 'jpg', $quality = 90) {
 
 		$Sobel = new \app\SobelEdgeDetector($this, $type);
 		
-		return new swiftIMG($Sobel->SobelOperator($k), $format, $quality);
+		return new swiftIMG($this->getKey(), $Sobel->SobelOperator($k), $format, $quality);
 	}
 
 	public function regionGrowing(int $T = 10, $type = 'color') {
@@ -272,24 +180,21 @@ class swiftIMG
 
 	public function crop($width = null, $height = null, $startX = null, $startY = null, $isProp = false) {
 
+		if(!is_null($width)) {
+			if($isProp && $this->isProportional($width, $height)) {
+				return $this->resize($width, $height);
+			} else {
+				if($width == 'img-width' || is_null($width)) $width = $this->getRows();
+				else if($width == 'img-half-width') $width = (int)($this->getRows() / 2);
+				if($height == 'img-height' || is_null($height)) $height = $this->getCols();
+				else if($height == 'img-half-height') $height = (int)($this->getCols() / 2);
 
-		if($isProp && $this->isProportional($width, $height)) {
-			return $this->resize($width, $height);
-		} else {
-			if($width == 'img-width' || is_null($width)) $width = $this->getRows();
-			else if($width == 'img-half-width') $width = (int)($this->getRows() / 2);
-			if($height == 'img-height' || is_null($height)) $height = $this->getCols();
-			else if($height == 'img-half-height') $height = (int)($this->getCols() / 2);
+				$this->getImages()->crop($width, $height, $startX, $startY);
 
-			//if(!is_null($startX)) $startX = $width - $startX;
-
-			$this->getImages()->crop($width, $height, $startX, $startY);
-
-			$this->updateData();
-
-
-			return $this;
+				$this->updateData();
+			}
 		}
+		return $this;
 	}
 
 
@@ -444,6 +349,9 @@ class swiftIMG
 				// bottom
 				// bottom-right
 	public function insert($img, $pos = 'top-left', $offsetX = 0, $offsetY = 0) {
+		if(is_string($img))
+			$Img = Image::make($img);
+		
 
 		$this->getImages()->insert($img, $pos, $offsetX, $offsetY);
 		
@@ -478,7 +386,7 @@ class swiftIMG
 		$resizeImg = $img;
 
 		if(is_string($img))
-			$resizeImg = new swiftIMG($img);
+			$resizeImg = new swiftIMG($this->getKey(), $img);
 
 		$resizeImg->resize($size[0], $size[1]);
 
@@ -489,7 +397,7 @@ class swiftIMG
 		$cropImg = $img;
 
 		if(is_string($img))
-			$cropImg = new swiftIMG($img);
+			$cropImg = new swiftIMG($this->getKey(), $img);
 			//crop($width = null, $height = null, $startX = null, $startY = null, $isProp = false)
 		$cropImg->crop($values[0], $values[1], $values[2], $values[3], $values[4]);
 
@@ -499,15 +407,6 @@ class swiftIMG
 	public function frame($type = 'type-1') {
 
 		return $this->insertResize($_SERVER["DOCUMENT_ROOT"] . "/swiftIMG/frames/" . $type . ".png", [$this->getRows(), $this->getCols()]);
-	}
-
-
-	public function text($text, $startX = 0, $startY = 0, $func = NULL) {
-
-		$this->getImages()->text($text, $startX, $startY, $func);
-
-
-		return $this;
 	}
 
 
@@ -529,24 +428,35 @@ class swiftIMG
 		return $this;		
 	}
 
+	private function getDomain() {
 
-	public function save($path = NULL) {
+	}
 
-		// if(is_null($path)) {
-		// 	$swiftIMG_site = new swiftIMG_site();
-		// 	if() {
-		// 		if($swiftIMG_site->saveImage($name, $this->getKey(), $domain)) {
+	private function isUrl( $text ) {  
+	    if (!filter_var($url, FILTER_VALIDATE_URL) === false) {
+			    return true;
+			} else {
+			    return false;
+			}
+	}
 
-		// 		} else {
+	public function save($imgName, $hostName, $path = NULL) {
+		
+		if(is_null($path)) {
+			$swiftIMG_site = new swiftIMG_site();
+			
+				if($swiftIMG_site->saveImage($imgName, $this->getKey(), $hostName)) {
+					$imgName = str_replace(array('/', ':'), '', $imgName);
+					$saveImageName = $swiftIMG_site->pathToSaveServer($this->getKey()) . "$imgName";
+					$this->getImages()->save($saveImageName, $this->getQuality());
+					return $this->outPut();
+				} else {
+					echo "ExeptionSave";
+				}
 
-		// 		}
-		// 	} else {
-
-		// 	}
-				
-		// }
-
-
+		} else {
+			echo "path NOT NULL!!!!";	
+		}
 		return $this->getImages()->save($path, $this->getQuality());
 	}
 

@@ -1,92 +1,156 @@
 <?php
 
-//use app;
+//use public\php\swiftIMG_site;
 
 require "swiftImg.php";
-require "SobelEdgeDetector.php";
-//require_once "../app/CannyEdgeDetector.php";
+//require "SobelEdgeDetector.php";
+require "CannyEdgeDetector.php";
 require "RegionGrowing.php";
-require  "Histogram.php";
+require "Histogram.php";
+require "swiftIMG_site.php";
 
 
-//echo "dirname: " . dirname(__DIR__) . "<br>" . "DIR: " . __DIR__ . "<br>" . "str_replaceDirnameDIR: " . str_replace("\\", "/", dirname(__DIR__));
-//echo "HELLO!";
-
-// var_dump($_SERVER);
-
-// echo  "<br>";
-
-// echo $_SERVER["DOCUMENT_ROOT"] . '/images/img.jpg' . "<br>";
-
-// echo __DIR__;
-
-$path = 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/MilfordSound.jpg/600px-MilfordSound.jpg';
-$type = pathinfo($path, PATHINFO_EXTENSION);
-$data = file_get_contents($path);
-$base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-
-//$img = new \app\swiftIMG($base64, 'jpg' , 100);
-
- //var_dump($img);
-//echo $base64;
-// echo $imggetImages();
-
-// $img2 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/test.jpg', 'jpeg', 100);
-
-// $img3 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/Kellogg_Forest.jpg', 'jpeg', 100);
-
-// $img4 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/hist_test.jpg', 'jpeg', 100);
-
-// $img5 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/Original Color Image.png', 'jpeg', 100);
-
-// $img6 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/LenaDark.png', 'jpg', 100);
-
-$img7 = new \app\swiftIMG('https://swiftimg.herokuapp.com/images/lena.jpg', 'jpg', 100);
-
-// $img8 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/test4.jpg', 'jpg', 100);
-
-// $img9 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/eleph.jpg', 'jpg', 100);
-
-// $img10 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/yellow.jpg', 'jpg', 100);
-
-// $img11 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/test12.jpg', 'jpg', 40);
-
-// $img12 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/newLena.jpg', 'jpg', 100);
-
-// $img13 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/natureTest1.jpg', 'jpg', 100);
-// $img14 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/natureTest2.jpg', 'jpg', 100);
-// $img15 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/natureTest3.jpg', 'jpg', 100);
-// $img16 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/natureTest4.jpg', 'jpg', 100);
-// $img17 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/natureTest5.jpg', 'jpg', 100);
-// $img18 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/natureTest6.jpg', 'jpg', 100);
-// $img19 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/natureTest7.jpg', 'jpg', 100);
-// $img20 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/natureTest8.jpg', 'jpg', 100);
-
-// $img21 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/WinterCat.jpg', 'jpg', 50);
-
-// $img22 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/green.jpg', 'jpg', 100);
-
-// $img23 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/ColorTest1.jpg', 'jpg', 100);
-
-// $img24 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/ColorTest2.jpg', 'jpg', 100);
-
-// $img25 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/ColorTest3.jpg', 'jpg', 100);
-
-// $img26 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/girl-colorful-portrait.jpg', 'jpg', 100);
-
-// $img27 = new \app\swiftIMG('E:/OpenServer/domains/localhost/swiftIMG/images/OZM.jpg', 'jpg', 100);
-
-//$hist = new \app\Histogram('grayscale', $img6);
 
 
-//var_dump($Canny->fillNewImageData());
-//$hist->histogramEqualization($img);
-//echo $hist->histogramGraph($img)->response('jpeg', 90);
+if(isset($_POST['paramsArr']) && isset($_POST['imgParams'])) {
 
-//var_dump($img->getImageData());
+	function toBase64($url) {
+		$path = $url;
+		$type = pathinfo($path, PATHINFO_EXTENSION);
+		$data = file_get_contents($path);
+		$base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+		return $base64;
+	}
+	// var_dump($_POST['paramsArr']);
+	// echo "<br>";
+	// var_dump($_POST['imgParams']);
+
+	
+
+	
+
+	$methods = $_POST['paramsArr'];
+	$methodsLength = count($methods);
+	
 
 
-  echo $img7->histogramEqualization('color')->outPut();
+	//var_dump($methods);
+	$method = '';
+	$params = [];
+	$imgNameArr = explode('/', $_POST['imgParams']['img']);
+	$imgNameArrLen = count($imgNameArr);
+	$imgName = $imgNameArr[$imgNameArrLen - 1];
+	$imgNameArr = explode('.', $imgName);
+	$imgName = $imgNameArr[0];
+	//echo $imgName;
+	$isSpecImg = false;
+	$SpecImg = 0;
+
+		foreach ($methods as $methodsKey => $methodsValue) {
+			foreach ($methodsValue as $key => $value) {
+				if($key == 'method') {
+					$imgName .= "-$value(";
+				} else if ($key == 'params' && is_array($value)) {
+					foreach ($value as $valueKey => $valueValue) {
+						if($valueKey == 'image' && is_array($valueValue)) {
+							$newImgNameArr = explode('/', $valueValue['img']);
+							$newImgNameArrLen = count($newImgNameArr);
+							$newImgName = $newImgNameArr[$newImgNameArrLen - 1];
+							$imgName .= "$newImgName";
+						} else {
+							if($valueValue == '') {
+								$valueValue = NULL;
+							}
+							$imgName .= "$valueValue";
+						}
+					}
+				}
+			}
+			$imgName .= ")";
+
+		}
+		$imgName .= '.' . $imgNameArr[1];
+		
+		$swiftIMG_site = new \app\swiftIMG_site();
+		//echo $imgName;
+		if($swiftIMG_site->isExistImage($imgName, $_POST['imgParams']['key'])) {
+			$imgName = str_replace(array('/', ':'), '', $imgName);
+			echo toBase64($swiftIMG_site->pathToSaveServer($_POST['imgParams']['key']) . "$imgName");
+		} else {
+
+			$img = new \app\swiftIMG($_POST['imgParams']['key'], toBase64($_POST['imgParams']['img']), $_POST['imgParams']['type'], $_POST['imgParams']['quality']);
+
+			foreach ($methods as $methodsKey => $methodsValue) {
+				foreach ($methodsValue as $key => $value) {
+					if($key == 'method') {
+						$method = $value;
+
+						
+
+					} else if ($key == 'params' && is_array($value)) {
+						foreach ($value as $valueKey => $valueValue) {
+							if($valueKey == 'image' && is_array($valueValue)) {
+								//$newImg = new \app\swiftIMG($valueValue['key'], toBase64($valueValue['img']), $valueValue['type'], $valueValue['quality']);
+								$params[] = $valueValue['img'];
+								
+							} else {
+								if($valueValue == '') {
+									$valueValue = NULL;
+								}
+								$params[] = $valueValue;
+								
+							}
+						}
+						//var_dump($params);
+					}
+				}
+				
+				if ($method == 'histogramGraph' || $method == 'CannyBorder' || $method == 'SobelBorder') {
+					$isSpecImg = true;
+					$SpecImg = $img->$method(...$params);
+					$params = [];
+					continue;
+				}
+				if($isSpecImg) {
+					if($method == 'save') {
+						echo $SpecImg->save($imgName, ...$params);
+					} else if($method == 'outPut') {
+						echo $SpecImg->outPut();
+					} else {
+						echo "After histogramGraph, CannyBorder and SobelBorder must save() or outPut() method!!!!";
+					}
+					$isSpecImg = false;
+					break;
+				}
+
+
+				if($method != 'outPut' && $method != 'save') {
+					$img->$method(...$params);
+					$params = [];
+				} else if ($method == 'save') {
+					echo $img->save($imgName, ...$params);					
+				} else {
+					echo $img->$method();
+				}
+			}
+		}
+
+	
+	
+		
+	
+
+} else {
+	echo "ERROR!";
+}
+// $path = "E://OpenServer/domains/localhost/testheroku/images/img.jpg";
+// 		$type = pathinfo($path, PATHINFO_EXTENSION);
+// 		$data = file_get_contents($path);
+// 		$base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+
+// $img2 = new \app\swiftIMG("key", $base64);
+
+// echo $img2->histogramGraph('color')->outPut();
 
 
 ?>

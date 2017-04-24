@@ -1,4 +1,11 @@
-# Override PHP settings. More in sites/default/settings.php
-# but the following cannot be changed at runtime.
-# И сразу же после этих строк добавьте:
-# php_value memory_limit 256M
+RewriteEngine on
+
+ErrorDocument 404 /404.php
+
+RewriteRule ^404/?$ 404.php
+RewriteRule ^documentation/?$ documentation.php
+RewriteRule ^download/?$ download.php
+RewriteRule ^cabinet/?$ cabinet.php
+RewriteRule ^exit/?$ exit.php
+RewriteRule ^login/?$ login.php
+RewriteRule ^app/key=([a-z0-9]+)/?$ app.php?key=$1

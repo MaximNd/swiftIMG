@@ -1,57 +1,183 @@
-<!DOCTYPE HTML>
-<html lang=uk>
-    <head>
-        <meta charset=UTF-8>
-        <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"/>
-        <meta name=viewport content="width=device-width, initial-scale=1.0">
-        <title>swiftIMG | Головна</title>
-        <link href=public/css/bootstrap.min.css rel="stylesheet"/>
-        <link href=public/css/font-awesome.min.css rel="stylesheet"/>
-        <link href=public/less/style.less rel="stylesheet/less"/>
-        <script src=public/js/less.js></script>
-    </head>
-    <body>
-        <!-- <header class="navbar navbar-fixed-top">
-            <div class=container-fluid>
-                <div class=navbar-header>
-                    <button type=button class="navbar-toggle collapsed" data-toggle=collapse data-target=#navbar aria-expanded=false aria-controls=navbar>
-                    <span class=sr-only>Toggle navigation</span>
-                    <span class=icon-bar></span>
-                    <span class=icon-bar></span>
-                    <span class=icon-bar></span>
-                    </button>
-                    <a class=navbar-brand href=/>swiftIMG</a>
-                </div>
-                <div id=navbar class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li><a href=/news><i class="fa fa-book" aria-hidden="true"></i>&nbsp;Документація</a></li>
-                    </ul>
+<?php 
+    $title = "swiftIMG - Онлайн сервіс з обробки зображень";
+    include_once($_SERVER['DOCUMENT_ROOT'].'/app/header.php'); 
+?>
+<header>
+    <div class="container" id="maincontent" tabindex="-1">
+        <div class="row">
+            <div class="hidden-xs hidden-sm col-md-4">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="/public/images/portfolio/cabin.png" alt="Image">
+                        </div>
+                        <div class="item">
+                            <img src="/public/images/portfolio/cake.png" alt="Image">
+                        </div>
+                        <div class="item">
+                            <img src="/public/images/portfolio/circus.png" alt="Image">
+                        </div>
+                        <div class="item">
+                            <img src="/public/images/portfolio/game.png" alt="Image">
+                        </div>
+                        <div class="item">
+                            <img src="/public/images/portfolio/safe.png" alt="Image">
+                        </div>
+                        <div class="item">
+                            <img src="/public/images/portfolio/submarine.png" alt="Image">
+                        </div>
+                  </div>
                 </div>
             </div>
-        </header> -->
+            <div class="col-xs-12 col-md-8">
+                <div class="intro-text">
+                    <span class="name">swiftIMG</span>
+                    <hr class="star-light">
+                    <span class="skills">Онлайн сервіс з обробки зображень</span>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <a href="/download" class="btn btn-lg btn-outline">
+                                <i class="fa fa-download"></i>&nbsp;Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
-        <!-- <img id="img" src="/images/img.jpg"> -->
-        
-        <?php   
-            phpinfo();    
-        ?>
-        <script src=public/js/jquery.js></script>
-        <script src=public/js/swiftIMG.js></script>
-        
-        <script>
-        console.log(location.protocol + "//" + location.hostname);
-            // $.ajax({
-            //     url: 'app/API.php',
-            //     type: 'POST',
-            //     data: {param: "hello"},
-            //     success: function(data) {
-            //         $("body").append("<img src=" + data + ">");
-            //         //$("body").append(data);
-            //     }
-            // });
-            
+<!-- Portfolio -->
+<section class="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h1>Портфоліо</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 portfolio-item">
+                <a href="#" class="portfolio-link">
+                    <div class="mask">  
+                        <h2>Title</h2> 
+                        <p>Content</p> 
+                    </div>  
+                    <img src="/public/images/portfolio/cabin.png" class="img-responsive" alt="Cabin">
+                </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 portfolio-item">
+                <a href="#" class="portfolio-link">
+                    <div class="mask">  
+                        <h2>Title</h2> 
+                        <p>Content</p> 
+                    </div>  
+                    <img src="/public/images/portfolio/cake.png" class="img-responsive" alt="Slice of cake">
+                </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 portfolio-item">
+                <a href="#" class="portfolio-link">
+                    <div class="mask">  
+                        <h2>Title</h2> 
+                        <p>Content</p> 
+                    </div>  
+                    <img src="/public/images/portfolio/circus.png" class="img-responsive" alt="Circus tent">
+                </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 portfolio-item">
+                <a href="#" class="portfolio-link">
+                    <div class="mask">  
+                        <h2>Title</h2> 
+                        <p>Content</p> 
+                    </div>  
+                    <img src="/public/images/portfolio/game.png" class="img-responsive" alt="Game controller">
+                </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 portfolio-item">
+                <a href="#" class="portfolio-link">
+                    <div class="mask">  
+                        <h2>Title</h2> 
+                        <p>Content</p> 
+                    </div>  
+                    <img src="/public/images/portfolio/safe.png" class="img-responsive" alt="Safe">
+                </a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 portfolio-item">
+                <a href="#" class="portfolio-link">
+                    <div class="mask">  
+                        <h2>Title</h2> 
+                        <p>Content</p> 
+                    </div>  
+                    <img src="/public/images/portfolio/submarine.png" class="img-responsive" alt="Submarine">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
-        </script>
-    </body>
-</html>
+<!-- About Section -->
+<section class="about success">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1>Про нас</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 about-item">
+                <img src="/public/images/profile.png" class="img-responsive img-circle" alt="Віталій Мудрий">
+                <h3 class="text-center">Віталій Мудрий</h3>
+            </div>
+            <div class="col-xs-12 col-sm-6 about-item">
+                <img src="/public/images/profile.png" class="img-responsive img-circle" alt="Максим Недашківський">
+                <h3 class="text-center">Максим Недашківський</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <p>Привіт. Ми – група студентів факультету інформатики НаУКМА. Одного разу при створенні проекту ми зіткнулися з проблемою неотимізації картинок. Їх було багато і всі вони розміщувалися на сторонніх серверах. Обробка вручну кожної картинки зайняла б багато часу, то ж такий шлях навіть не розглядався. Після декількох годин пошуку, ми зрозуміли, що треба самим писати додаток, який міг би оптимізувати автоматично кожну фотографію на сайті. Під час роботи ми зрозуміли, що можна не тільки зжимати картинки, а й обробляти їх. То ж ми додали деякі фішки, які Ви зможете виконувати зі своїми зображеннями. Отож, насолоджуйтесь нашим продуктом та робіть Ваші картинки надзвичайними.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!-- Contact Section -->
+<section class="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h1>Зв'яжіться з нами</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <form onsubmit="sendComment(this); return false;">
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label for="name">Ім'я</label>
+                            <input type="text" class="form-control" placeholder="Ім'я" id="name" name="name" autocomplete="off">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" placeholder="Email" id="email" name="email" autocomplete="off">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label for="message">Повідомлення</label>
+                            <textarea rows="5" class="form-control" placeholder="Повідомлення" id="message" name="message"></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="success"></div>
+                    <button type="submit" class="btn btn-success btn-lg btn-block">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<?php include_once($_SERVER['DOCUMENT_ROOT'].'/app/footer.php'); ?>
