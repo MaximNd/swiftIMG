@@ -1,8 +1,10 @@
 <?php
     
     namespace app;
-use Mysqli;
-	class swiftIMG_site {
+    
+    use Mysqli;
+	
+    class swiftIMG_site {
 		protected $mysqli = false;
 
 		function __construct() {
@@ -14,7 +16,7 @@ use Mysqli;
         }
 
         function connectDB() {
-            $this->mysqli = new mysqli('eu-cdbr-west-01.clearbd.com', 'b88386567900a1', 'f1ef4302', "heroku_277db8570804040");
+            $this->mysqli = new mysqli('ip-10-80-29-253.eu-west-1.compute.internal:44124', 'b88386567900a1', 'f1ef4302', "heroku_277db8570804040");
 		    $this->mysqli->query("SET NAMES 'utf8'");
         }
 
