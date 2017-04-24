@@ -8,5 +8,8 @@
 	<?php 
             echo $_SERVER['HTTP_HOST'];
         ?>
+        <script>
+        	console.log(location.hostname);
+        </script>
 </body>
 </html>

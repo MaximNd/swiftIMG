@@ -39,7 +39,7 @@
         <script src=public/js/swiftIMG.js></script>
         
         <script>
-        
+        console.log(location.hostname);
             // $.ajax({
             //     url: 'app/API.php',
             //     type: 'POST',
