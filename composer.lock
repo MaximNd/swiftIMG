@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7ea1efe8e9e66becf4f739d7ff49131d",
-    "content-hash": "17e0283c619b851be3c865149f868b1f",
+    "hash": "47d6be67f7beb56c0724bba69681b392",
+    "content-hash": "4ca8fcd9e47f496d72eabe091f5519df",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -74,16 +74,16 @@
         },
         {
             "name": "intervention/image",
-            "version": "2.3.12",
+            "version": "2.3.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "5c92ea4503ccb000ce6a922efbf272638c64a68c"
+                "reference": "15a517f052ee15d373ffa145c9642d5fec7ddf5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/5c92ea4503ccb000ce6a922efbf272638c64a68c",
-                "reference": "5c92ea4503ccb000ce6a922efbf272638c64a68c",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/15a517f052ee15d373ffa145c9642d5fec7ddf5c",
+                "reference": "15a517f052ee15d373ffa145c9642d5fec7ddf5c",
                 "shasum": ""
             },
             "require": {
@@ -132,7 +132,7 @@
                 "thumbnail",
                 "watermark"
             ],
-            "time": "2017-04-22 14:50:13"
+            "time": "2017-04-23 18:45:36"
         },
         {
             "name": "psr/http-message",
@@ -192,7 +192,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "ext-gd": "*"
+        "ext-gd": "*",
+        "ext-mysqli": "*"
     },
     "platform-dev": []
 }
