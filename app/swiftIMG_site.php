@@ -16,8 +16,10 @@
         }
 
         function connectDB() {
+            echo "swiftIMG_site_connectDB_start";
             $this->mysqli = new mysqli('eu-cdbr-west-01.clearbd.com', 'b88386567900a1', 'f1ef4302', "heroku_277db8570804040");
 		    $this->mysqli->query("SET NAMES 'utf8'");
+            echo "swiftIMG_site_connectDB_end";
         }
 
         function disconnectDB() {
