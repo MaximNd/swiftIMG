@@ -7,26 +7,20 @@
         <div class="row">
             <div class="hidden-xs hidden-sm col-md-4">
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <img src="/public/images/portfolio/cabin.png" alt="Image">
-                        </div>
-                        <div class="item">
-                            <img src="/public/images/portfolio/cake.png" alt="Image">
-                        </div>
-                        <div class="item">
-                            <img src="/public/images/portfolio/circus.png" alt="Image">
-                        </div>
-                        <div class="item">
-                            <img src="/public/images/portfolio/game.png" alt="Image">
-                        </div>
-                        <div class="item">
-                            <img src="/public/images/portfolio/safe.png" alt="Image">
-                        </div>
-                        <div class="item">
-                            <img src="/public/images/portfolio/submarine.png" alt="Image">
-                        </div>
-                  </div>
+                <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                <img src="/public/images/A_2nMUIcMFM.jpg" alt="Image">
+                </div>
+                <div class="item">
+                <img src="/public/images/8Kej5C-wXHI.jpg" alt="Image">
+                </div>
+                <div class="item">
+                <img src="/public/images/8AirNDwMDko.jpg" alt="Image">
+                </div>
+                <div class="item">
+                <img src="/public/images/QMowyrdBbFk.jpg" alt="Image">
+                </div>
+                </div>
                 </div>
             </div>
             <div class="col-xs-12 col-md-8">
@@ -51,66 +45,61 @@
 <section class="portfolio">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 text-center">
-                <h1>Портфоліо</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-4 portfolio-item">
-                <a href="#" class="portfolio-link">
-                    <div class="mask">  
-                        <h2>Title</h2> 
-                        <p>Content</p> 
-                    </div>  
-                    <img src="/public/images/portfolio/cabin.png" class="img-responsive" alt="Cabin">
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 portfolio-item">
-                <a href="#" class="portfolio-link">
-                    <div class="mask">  
-                        <h2>Title</h2> 
-                        <p>Content</p> 
-                    </div>  
-                    <img src="/public/images/portfolio/cake.png" class="img-responsive" alt="Slice of cake">
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 portfolio-item">
-                <a href="#" class="portfolio-link">
-                    <div class="mask">  
-                        <h2>Title</h2> 
-                        <p>Content</p> 
-                    </div>  
-                    <img src="/public/images/portfolio/circus.png" class="img-responsive" alt="Circus tent">
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 portfolio-item">
-                <a href="#" class="portfolio-link">
-                    <div class="mask">  
-                        <h2>Title</h2> 
-                        <p>Content</p> 
-                    </div>  
-                    <img src="/public/images/portfolio/game.png" class="img-responsive" alt="Game controller">
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 portfolio-item">
-                <a href="#" class="portfolio-link">
-                    <div class="mask">  
-                        <h2>Title</h2> 
-                        <p>Content</p> 
-                    </div>  
-                    <img src="/public/images/portfolio/safe.png" class="img-responsive" alt="Safe">
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 portfolio-item">
-                <a href="#" class="portfolio-link">
-                    <div class="mask">  
-                        <h2>Title</h2> 
-                        <p>Content</p> 
-                    </div>  
-                    <img src="/public/images/portfolio/submarine.png" class="img-responsive" alt="Submarine">
-                </a>
-            </div>
-        </div>
+<div class="col-xs-12 col-sm-6 col-md-4 portfolio-item">
+<a href="#" class="portfolio-link">
+<div class="mask"> 
+<h2>Title</h2> 
+<p>Content</p> 
+</div> 
+<img src="/public/images/CvGvzsyX1tA.jpg" class="img-responsive" alt="Cabin">
+</a>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-4 portfolio-item">
+<a href="#" class="portfolio-link">
+<div class="mask"> 
+<h2>Title</h2> 
+<p>Content</p> 
+</div> 
+<img src="/public/images/IYcz1tAP1Lw.jpg" class="img-responsive" alt="Slice of cake">
+</a>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-4 portfolio-item">
+<a href="#" class="portfolio-link">
+<div class="mask"> 
+<h2>Title</h2> 
+<p>Content</p> 
+</div> 
+<img src="/public/images/RDDe67vZ8nE.jpg" class="img-responsive" alt="Circus tent">
+</a>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-4 portfolio-item">
+<a href="#" class="portfolio-link">
+<div class="mask"> 
+<h2>Title</h2> 
+<p>Content</p> 
+</div> 
+<img src="/public/images/Ch9uxuje6Ro.jpg" class="img-responsive" alt="Game controller">
+</a>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-4 portfolio-item">
+<a href="#" class="portfolio-link">
+<div class="mask"> 
+<h2>Title</h2> 
+<p>Content</p> 
+</div> 
+<img src="/public/images/AUXIuLoU754.jpg" class="img-responsive" alt="Safe">
+</a>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-4 portfolio-item">
+<a href="#" class="portfolio-link">
+<div class="mask"> 
+<h2>Title</h2> 
+<p>Content</p> 
+</div> 
+<img src="/public/images/QMowyrdBbFk.jpg" class="img-responsive" alt="Submarine">
+</a>
+</div>
+</div>
     </div>
 </section>
 
