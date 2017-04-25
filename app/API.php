@@ -1,5 +1,7 @@
 <?php
-
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST');
+header('Access-Control-Allow-Headers: X-Requested-With, content-type');
 //use public\php\swiftIMG_site;
 
 require "swiftImg.php";
@@ -13,6 +15,8 @@ require "swiftIMG_site.php";
 
 
 if(isset($_POST['paramsArr']) && isset($_POST['imgParams'])) {
+
+
 
 	function toBase64($url) {
 		$path = $url;
