@@ -44,8 +44,12 @@ if(isset($_POST['paramsArr']) && isset($_POST['imgParams'])) {
 	$imgNameArr = explode('/', $_POST['imgParams']['img']);
 	$imgNameArrLen = count($imgNameArr);
 	$imgName = $imgNameArr[$imgNameArrLen - 1];
-	$imgNameArr = explode('.', $imgName);
-	$imgName = $imgNameArr[0];
+	$imgNameArr2 = explode('.', $imgName);
+	$imgNameArr2Len = count($imgNameArr2);
+	$imgName = '';
+	for($i = 0; $i < $imgNameArr2Len - 1; ++$i) {
+		$imgName .= $imgNameArr2[$i];
+	}
 	//echo $imgName;
 	$isSpecImg = false;
 	$SpecImg = 0;
@@ -73,7 +77,7 @@ if(isset($_POST['paramsArr']) && isset($_POST['imgParams'])) {
 			$imgName .= ")";
 
 		}
-		$imgName .= '.' . $imgNameArr[1];
+		$imgName .= '.' . $imgNameArr2[$imgNameArr2Len - 1];
 		
 		$swiftIMG_site = new \app\swiftIMG_site();
 		//echo $imgName;
