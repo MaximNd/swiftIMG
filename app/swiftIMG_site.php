@@ -125,7 +125,7 @@
         	$result = $this->mysqli->query("SELECT DISTINCT `apps`.`id` AS `id`
 			        						FROM `apps` INNER JOIN `images` ON `apps`.`id` = `images`.`app_id`
 			        						WHERE `apps`.`key` = '$key' AND `apps`.`domain` = '$domain'");
-
+            var_dump($result->fetch_assoc());
         	if (mysqli_num_rows($result) == 1) {
         		$result = $result->fetch_assoc();
                 $id = $result["id"];
