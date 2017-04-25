@@ -36,7 +36,7 @@
                     <span class="skills">Онлайн сервіс з обробки зображень</span>
                     <div class="row">
                         <div class="col-xs-12">
-                            <a href="/download" class="btn btn-lg btn-outline">
+                            <a href="https://swiftimg.herokuapp.com/public/js/swiftIMG.js" download class="btn btn-lg btn-outline">
                                 <i class="fa fa-download"></i>&nbsp;Download
                             </a>
                         </div>
