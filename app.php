@@ -108,7 +108,7 @@
 		    			<?php foreach ($images as $image): ?>
 							<div class="image">
 								<a href="#" role="button" data-toggle="modal" data-target="#imagePreview" onclick="showImagePreview(this)">
-									<img src="/public/users/user-<?=$user["id"]; ?>/app-<?=$app["id"]; ?>/<?=$image["name"]; ?>" alt="<?=$image["original_name"]; ?>" data-date="<?=$image["date"]; ?>" data-original-name="<?=$image["original_name"]; ?>">
+									<img src="/public/users/user-<?=$user["id"]; ?>/app-<?=$app["id"]; ?>/<?php $imgg = $image["name"];$imgg = str_replace(array('/', ':'), '', $imgg); echo $imgg; ?>" alt="<?=$image["original_name"]; ?>" data-date="<?=$image["date"]; ?>" data-original-name="<?=$image["original_name"]; ?>">
 								</a>
 								<p class="date"><?=$image["date"]; ?></p>
 							</div>
