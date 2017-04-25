@@ -364,7 +364,7 @@ class swiftImg {
 
     sendRequest(callbackSuccess, callbackBeforeSend) {
         $.ajax({
-            url: 'app/API.php',
+            url: 'https://swiftimg.herokuapp.com/app/API.php',
             type: 'POST',
             data: {"paramsArr" : this.paramsArr, "imgParams" : this.imgParams},
             beforeSend: callbackBeforeSend,
