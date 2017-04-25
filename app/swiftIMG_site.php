@@ -32,7 +32,7 @@
                 $user_id = $this->setUser($full_name, $social_id);
 
                 if ($user_id) {
-                    mkdir($_SERVER['DOCUMENT_ROOT'].'/testheroku/public/users/user-'.$user_id, 0755, true);
+                    mkdir($_SERVER['DOCUMENT_ROOT'].'/public/users/user-'.$user_id, 0755, true);
                     $this->getUser($full_name, $social_id);
                 }
             }
@@ -166,7 +166,7 @@
                                             FROM `apps` 
                                             WHERE `key` = '$key'");
             $res = $result->fetch_assoc();
-            $path = 'E://OpenServer/domains/localhost/testheroku/public/users/user-' . $res['user_id'] . '/app-' . $res['id'] . '/';
+            $path = $_SERVER['DOCUMENT_ROOT'] . '/public/users/user-' . $res['user_id'] . '/app-' . $res['id'] . '/';
 
             return $path;
         }

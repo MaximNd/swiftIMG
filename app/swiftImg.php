@@ -406,7 +406,7 @@ class swiftIMG
 
 	public function frame($type = 'type-1') {
 
-		return $this->insertResize($_SERVER["DOCUMENT_ROOT"] . "/swiftIMG/frames/" . $type . ".png", [$this->getRows(), $this->getCols()]);
+		return $this->insertResize($_SERVER["DOCUMENT_ROOT"] . "/frames/" . $type . ".png", [$this->getRows(), $this->getCols()]);
 	}
 
 
