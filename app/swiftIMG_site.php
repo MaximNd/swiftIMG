@@ -125,9 +125,9 @@
         	$result = $this->mysqli->query("SELECT DISTINCT `apps`.`id` AS `id`
 			        						FROM `apps`
 			        						WHERE `apps`.`key` = '$key' AND `apps`.`domain` = '$domain'");
-            echo "key: $key";
-            echo "domain: $domain";
-            echo "name: $name";
+            // echo "key: $key";
+            // echo "domain: $domain";
+            // echo "name: $name";
             var_dump($result->fetch_assoc());
         	if (mysqli_num_rows($result) == 1) {
         		$result = $result->fetch_assoc();
